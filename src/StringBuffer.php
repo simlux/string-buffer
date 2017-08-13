@@ -2,7 +2,7 @@
 
 namespace Simlux\String;
 
-use Simlux\StringBuffer\Exceptions\UnknownMethodException;
+use Simlux\String\Exceptions\UnknownMethodException;
 
 /**
  * Class StringBuffer
