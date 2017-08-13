@@ -1,7 +1,6 @@
 language: php
 php:
-  # aliased to a recent 7.x version
   - 7.0
-  # aliased to a recent hhvm version
-  - hhvm
+  - 7.1
+before_script: composer install
 script: phpunit --configuration phpunit.xml --coverage-text
