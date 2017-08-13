@@ -2,6 +2,7 @@
 
 namespace Simlux\String;
 
+use Simlux\String\Exceptions\UnknownExtensionException;
 use Simlux\String\Exceptions\UnknownMethodException;
 
 /**
@@ -114,6 +115,42 @@ class StringBuffer
     }
 
     /**
+     * @param string $extension
+     *
+     * @return AbstractStringExtension
+     *
+     * @throws UnknownExtensionException
+     */
+    protected function getExtension(string $extension): AbstractStringExtension
+    {
+        $instance = null;
+        switch ($extension) {
+
+            case 'conditions':
+                $instance = $this->conditions();
+                break;
+
+            case 'properties':
+                $instance = $this->properties();
+                break;
+
+            case 'transformer':
+                $instance = $this->transformer();
+                break;
+
+            case 'manipulator':
+                $instance = $this->manipulator();
+                break;
+
+            default:
+                throw new UnknownExtensionException('sad');
+
+        }
+
+        return $instance;
+    }
+
+    /**
      * @param string $name
      * @param array  $arguments
      *
@@ -122,30 +159,20 @@ class StringBuffer
      */
     public function __call(string $name, array $arguments)
     {
-        $returnValue = null;
+        $extensions = [
+            'conditions'  => $this->conditionMethods,
+            'properties'  => $this->propertyMethods,
+            'transformer' => $this->transformerMethods,
+            'manipulator' => $this->manipulatorMethods,
+        ];
 
-        if (in_array($name, $this->conditionMethods)) {
-            $returnValue = call_user_func_array([$this->conditions(), $name], $arguments);
+        foreach ($extensions as $key => $methods) {
+            if (in_array($name, $methods)) {
+                return call_user_func_array([$this->getExtension($key), $name], $arguments);
+            }
         }
 
-        if (in_array($name, $this->propertyMethods)) {
-            $returnValue = call_user_func_array([$this->properties(), $name], $arguments);
-        }
-
-        if (in_array($name, $this->transformerMethods)) {
-            $returnValue = call_user_func_array([$this->transformer(), $name], $arguments);
-        }
-
-        if (in_array($name, $this->manipulatorMethods)) {
-            $returnValue = call_user_func_array([$this->manipulator(), $name], $arguments);
-        }
-
-        if (is_null($returnValue)) {
-
-            throw new UnknownMethodException($name);
-        }
-
-        return $returnValue;
+        throw new UnknownMethodException($name);
     }
 
     /**
@@ -247,8 +274,10 @@ class StringBuffer
     {
         if ($condition) {
             return $this->append($string);
-        } else if (!is_null($else)) {
-            return $this->append($else);
+        } else {
+            if (!is_null($else)) {
+                return $this->append($else);
+            }
         }
 
         return $this;
@@ -277,8 +306,10 @@ class StringBuffer
     {
         if ($condition) {
             return $this->prepend($string);
-        } else if (!is_null($else)) {
-            return $this->prepend($else);
+        } else {
+            if (!is_null($else)) {
+                return $this->prepend($else);
+            }
         }
 
         return $this;
