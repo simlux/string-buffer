@@ -25,4 +25,6 @@ Simlux\String\Test\StringConditions
 Simlux\String\Test\StringTransformer
  [x] To lower
  [x] To upper
+ [x] To float
+ [x] To integer
 

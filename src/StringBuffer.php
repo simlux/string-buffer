@@ -24,6 +24,8 @@ use Simlux\String\Exceptions\UnknownMethodException;
  * // from StringTransformer
  * @method toLower(): StringBuffer
  * @method toUpper(): StringBuffer
+ * @method toFloat(): float
+ * @method toInteger(): float
  */
 class StringBuffer
 {
@@ -72,6 +74,8 @@ class StringBuffer
     private $transformerMethods = [
         'toLower',
         'toUpper',
+        'toFloat',
+        'toInteger',
     ];
 
     /**

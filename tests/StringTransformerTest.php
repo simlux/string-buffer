@@ -59,4 +59,16 @@ class StringTransformerTest extends TestCase
         $transformer = new StringTransformer(StringBuffer::create($string));
         $this->assertSame($expected, $transformer->toUpper()->toString());
     }
+
+    public function testToFloat()
+    {
+        $this->assertSame(1.23, StringBuffer::create('1.23')->toFloat());
+        $this->assertInternalType('float', StringBuffer::create('1.23')->toFloat());
+    }
+
+    public function testToInteger()
+    {
+        $this->assertSame(1, StringBuffer::create('1')->toInteger());
+        $this->assertInternalType('int', StringBuffer::create('1.23')->toInteger());
+    }
 }

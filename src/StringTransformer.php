@@ -19,4 +19,20 @@ class StringTransformer extends AbstractStringExtension
     {
         return $this->string->setString(strtoupper($this->string->toString()));
     }
+
+    /**
+     * @return float
+     */
+    public function toFloat(): float
+    {
+        return (float)$this->string->toString();
+    }
+
+    /**
+     * @return int
+     */
+    public function toInteger(): int
+    {
+        return (int)$this->string->toString();
+    }
 }
