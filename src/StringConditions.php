@@ -48,7 +48,7 @@ class StringConditions extends AbstractStringExtension
             return substr(strtolower($this->string->toString()), 0, strlen($string)) === strtolower($string);
         }
 
-        return substr($this->string, 0, strlen($string)) === $string;
+        return substr($this->string->toString(), 0, strlen($string)) === $string;
     }
 
     /**

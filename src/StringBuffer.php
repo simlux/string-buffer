@@ -25,9 +25,28 @@ class StringBuffer
     private $conditions;
 
     /**
+     * @var array
+     */
+    private $conditionMethods = [
+        'contains',
+        'containsOneOf',
+        'beginsWith',
+        'beginsWithOneOf',
+        'endsWith',
+        'endsWithOneOf',
+    ];
+
+    /**
      * @var StringProperties
      */
     private $properties;
+
+    /**
+     * @var array
+     */
+    private $propertyMethods = [
+        'length',
+    ];
 
     /**
      * StringBuffer constructor.
@@ -58,11 +77,11 @@ class StringBuffer
      */
     public function __call(string $name, array $arguments)
     {
-        if (method_exists($this->conditions(), $name)) {
+        if (in_array($name, $this->conditionMethods)) {
             return call_user_func_array([$this->conditions(), $name], $arguments);
         }
 
-        if (method_exists($this->properties(), $name)) {
+        if (in_array($name, $this->propertyMethods)) {
             return call_user_func_array([$this->properties(), $name], $arguments);
         }
 
