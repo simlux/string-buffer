@@ -8,8 +8,4 @@ addons:
       secure: 
 before_script: composer install
 script:
-- phpunit --configuration phpunit.xml --coverage-text
-- sonar-scanner
-env:
-  global:
-    secure: TQc1mPCpzaptFLBkkOHe/IIXx+IvnE5Etu8EWSB6qhjX/g5hLViilXR3m8/JGEuciVL3rhhRZlwu2xWRxONXqdV92GNM+R4kTNZHLgaobinz7/w09NV2TP9MBzZEOs70pL3vuffbOma53pBI2vb2dv1Eep5uG6+B6w9TF3VFHVk2pIxsbJjgLifHUD64OepXRqhVqNod5n/3zxOJflfG1QIQ3hx7y6GNRiOa+G5Vn5v8qA+tVnQu3k6WlDF9INyEt8Z9XlRwu/DDuNskbsvzq2ks9GtS+JQMQCt9PALYZccOZx90OhzTntzOWu2K7VcNDj/XsG24GFkrlz9WAPKgInOaNGF+P32I9+UfhaMuiQ0VyIw+pMg1qiUcqUaG/o0ZlVcPgnwuuby7TH9AH3KTpYmYjZMpRnY3rwIIqg71MmeNb33NBUMQ/jywnjWnwPtFyVLiXgKb1I4pOcGvEB8647P6cmGIt1HxQ1NKnQVAz83Riq+r3Yikwj603ziHSXbt+Qm0OXtvvv9p2pVhAjcK6QkYsYIwJd6Vz9zR1opFw9CHKhJwoJZ/FbdZpmkqIZ+/78+dC7AR9+d9/bUQE+jWZW8ANvX6moz8u24InRgkMuBvvhA+SCTPkGrWeyF6FjgtS19YvH5cCwS8AT3msiuHi+WK08kTWrAsT6XyKsdkRDw=
+  - phpunit --configuration phpunit.xml --coverage-text
