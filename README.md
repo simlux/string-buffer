@@ -14,4 +14,10 @@ $buffer = new StringBuffer('test');
 $buffer->append('bar')
     ->prepend('foo');
 echo $buffer->toString(); // footestbar
+
+// with factory method
+$buffer = StringBuffer::create('test')
+    ->append('bar')
+    ->prepend('foo');
+echo $buffer->toString(); // footestbar
 ```
