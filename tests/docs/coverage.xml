@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1502657857">
-  <project timestamp="1502657857">
+<coverage generated="1502658075">
+  <project timestamp="1502658075">
     <package name="Simlux\String">
       <file name="/home/simon/repositories/string-buffer/src/AbstractStringExtension.php">
         <class name="AbstractStringExtension" namespace="Simlux\String">
