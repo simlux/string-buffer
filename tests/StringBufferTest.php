@@ -1,9 +1,9 @@
 <?php
 
-namespace Simlux\StringBuffer\Test;
+namespace Simlux\String\Test;
 
-use Simlux\StringBuffer\StringBuffer;
-use Simlux\StringBuffer\StringConditions;
+use Simlux\String\StringBuffer;
+use Simlux\String\StringConditions;
 
 class StringBufferTest extends TestCase
 {

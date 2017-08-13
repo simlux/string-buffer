@@ -24,10 +24,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Simlux\\StringBuffer\\": "src/"
+            "Simlux\\String\\": "src/"
         }
     },
     "autoload-dev": {
-        "psr-4": {"Simlux\\StringBuffer\\Test\\": "tests/"}
+        "psr-4": {"Simlux\\String\\Test\\": "tests/"}
     }
 }

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Simlux\StringBuffer;
+namespace Simlux\String;
 
 trait StringExtensionTrait
 {
