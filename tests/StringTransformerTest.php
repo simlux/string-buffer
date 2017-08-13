@@ -3,7 +3,6 @@
 namespace Simlux\String\Test;
 
 use Simlux\String\StringBuffer;
-use Simlux\String\StringConditions;
 use Simlux\String\StringTransformer;
 
 class StringTransformerTest extends TestCase

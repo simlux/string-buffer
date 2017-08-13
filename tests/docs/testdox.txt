@@ -22,6 +22,9 @@ Simlux\String\Test\StringConditions
  [x] Ends with one of
  [x] Equals
 
+Simlux\String\Test\StringManipulator
+ [x] Trim
+
 Simlux\String\Test\StringTransformer
  [x] To lower
  [x] To upper

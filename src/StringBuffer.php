@@ -26,6 +26,9 @@ use Simlux\String\Exceptions\UnknownMethodException;
  * @method toUpper(): StringBuffer
  * @method toFloat(): float
  * @method toInteger(): float
+ *
+ * // from StringManipulator
+ * @method trim(string $charList = " \t\n\r\0\x0B"): StringBuffer
  */
 class StringBuffer
 {
@@ -79,6 +82,18 @@ class StringBuffer
     ];
 
     /**
+     * @var StringManipulator
+     */
+    private $manipulator;
+
+    /**
+     * @var array
+     */
+    private $manipulatorMethods = [
+        'trim',
+    ];
+
+    /**
      * StringBuffer constructor.
      *
      * @param string $string
@@ -119,6 +134,10 @@ class StringBuffer
             return call_user_func_array([$this->transformer(), $name], $arguments);
         }
 
+        if (in_array($name, $this->manipulatorMethods)) {
+            return call_user_func_array([$this->manipulator(), $name], $arguments);
+        }
+
         throw new UnknownMethodException($name);
     }
 
@@ -156,6 +175,18 @@ class StringBuffer
         }
 
         return $this->transformer;
+    }
+
+    /**
+     * @return StringManipulator
+     */
+    public function manipulator(): StringManipulator
+    {
+        if (is_null($this->manipulator)) {
+            $this->manipulator = new StringManipulator($this);
+        }
+
+        return $this->manipulator;
     }
 
     /**
