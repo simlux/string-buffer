@@ -9,3 +9,9 @@ composer require simlux/string-buffer
 ```
 
 ## Examples
+```php
+$buffer = new StringBuffer('test');
+$buffer->append('bar')
+    ->prepend('foo');
+echo $buffer->toString(); // footestbar
+```
