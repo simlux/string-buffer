@@ -122,23 +122,30 @@ class StringBuffer
      */
     public function __call(string $name, array $arguments)
     {
+        $returnValue = null;
+
         if (in_array($name, $this->conditionMethods)) {
-            return call_user_func_array([$this->conditions(), $name], $arguments);
+            $returnValue = call_user_func_array([$this->conditions(), $name], $arguments);
         }
 
         if (in_array($name, $this->propertyMethods)) {
-            return call_user_func_array([$this->properties(), $name], $arguments);
+            $returnValue = call_user_func_array([$this->properties(), $name], $arguments);
         }
 
         if (in_array($name, $this->transformerMethods)) {
-            return call_user_func_array([$this->transformer(), $name], $arguments);
+            $returnValue = call_user_func_array([$this->transformer(), $name], $arguments);
         }
 
         if (in_array($name, $this->manipulatorMethods)) {
-            return call_user_func_array([$this->manipulator(), $name], $arguments);
+            $returnValue = call_user_func_array([$this->manipulator(), $name], $arguments);
         }
 
-        throw new UnknownMethodException($name);
+        if (is_null($returnValue)) {
+
+            throw new UnknownMethodException($name);
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -240,7 +247,7 @@ class StringBuffer
     {
         if ($condition) {
             return $this->append($string);
-        } elseif (!is_null($else)) {
+        } else if (!is_null($else)) {
             return $this->append($else);
         }
 
@@ -270,7 +277,7 @@ class StringBuffer
     {
         if ($condition) {
             return $this->prepend($string);
-        } elseif (!is_null($else)) {
+        } else if (!is_null($else)) {
             return $this->prepend($else);
         }
 
