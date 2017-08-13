@@ -2,12 +2,15 @@
 
 namespace Simlux\String;
 
+use Simlux\StringBuffer\Exceptions\UnknownMethodException;
+
 /**
  * Class StringBuffer
- * 
+ *
  * @package Simlux\StringBuffer
- *          
+ *
  * @method contains(string $string, bool $caseSensitive = false): bool
+ * @method length(): int
  */
 class StringBuffer
 {
@@ -16,8 +19,15 @@ class StringBuffer
      */
     private $string;
 
-    /** @var StringConditions */
+    /**
+     * @var StringConditions
+     */
     private $conditions;
+
+    /**
+     * @var StringProperties
+     */
+    private $properties;
 
     /**
      * StringBuffer constructor.
@@ -46,15 +56,22 @@ class StringBuffer
      * @return mixed
      * @throws UnknownMethodException
      */
-    public function __call(string $name , array $arguments)
+    public function __call(string $name, array $arguments)
     {
         if (method_exists($this->conditions(), $name)) {
             return call_user_func_array([$this->conditions(), $name], $arguments);
         }
 
+        if (method_exists($this->properties(), $name)) {
+            return call_user_func_array([$this->properties(), $name], $arguments);
+        }
+
         throw new UnknownMethodException($name);
     }
 
+    /**
+     * @return StringConditions
+     */
     public function conditions(): StringConditions
     {
         if (is_null($this->conditions)) {
@@ -65,11 +82,31 @@ class StringBuffer
     }
 
     /**
+     * @return StringProperties
+     */
+    public function properties(): StringProperties
+    {
+        if (is_null($this->properties)) {
+            $this->properties = new StringProperties($this);
+        }
+
+        return $this->properties;
+    }
+
+    /**
      * @return string
      */
     public function toString(): string
     {
         return $this->string;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return $this->toString();
     }
 
     /**

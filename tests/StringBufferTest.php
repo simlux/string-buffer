@@ -2,8 +2,10 @@
 
 namespace Simlux\String\Test;
 
+use Simlux\String\Exceptions\UnknownMethodException;
 use Simlux\String\StringBuffer;
 use Simlux\String\StringConditions;
+use Simlux\String\StringProperties;
 
 class StringBufferTest extends TestCase
 {
@@ -55,8 +57,27 @@ class StringBufferTest extends TestCase
         $this->assertInstanceOf(StringConditions::class, StringBuffer::create('')->conditions());
     }
 
+    public function testProperties()
+    {
+        $this->assertInstanceOf(StringProperties::class, StringBuffer::create('')->properties());
+    }
+
+    public function testThatUnknownMethodExceptionIsThrown()
+    {
+        $this->expectException(UnknownMethodException::class);
+        $this->expectExceptionMessage('foobar');
+
+        StringBuffer::create('test')->foobar();
+    }
+
     public function testLazyLoadingStringConditions()
     {
         $this->assertSame(true, StringBuffer::create('test')->contains('test'));
+    }
+
+
+    public function testLazyLoadingStringProperties()
+    {
+        $this->assertSame(4, StringBuffer::create('test')->length());
     }
 }

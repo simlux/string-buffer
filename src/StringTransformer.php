@@ -2,6 +2,7 @@
 
 namespace Simlux\String;
 
-class UnknownMethodException extends \Exception
+class StringTransformer extends AbstractStringExtension
 {
+
 }

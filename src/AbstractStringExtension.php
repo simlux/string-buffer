@@ -2,16 +2,14 @@
 
 namespace Simlux\String;
 
-trait StringExtensionTrait
+abstract class AbstractStringExtension
 {
     /**
      * @var StringBuffer
      */
-    private $string;
+    protected $string;
 
     /**
-     * StringManipulator constructor.
-     *
      * @param StringBuffer $string
      */
     public function __construct(StringBuffer $string)
