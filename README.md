@@ -14,8 +14,9 @@ composer require simlux/string-buffer
 use Simlux\String\StringBuffer();
 
 $buffer = new StringBuffer('test');
-$buffer->append('bar')
-    ->prepend('foo');
+$buffer->append('bar');
+$buffer->prepend('foo');
+
 echo $buffer->toString(); // footestbar
 
 // with factory method
