@@ -11,25 +11,31 @@ use Simlux\String\Exceptions\UnknownMethodException;
  * @package Simlux\StringBuffer
  *
  * // from StringConditions
- * @method contains(string $string, bool $caseSensitive = false): bool
- * @method containsOneOf(array $strings, bool $caseSensitive = false): bool
- * @method beginsWith(string $string, bool $caseSensitive = true): bool
- * @method beginsWithOneOf(array $strings, bool $caseSensitive = true): bool
- * @method endsWith($string, $caseSensitive = true): bool
- * @method endsWithOneOf(array $strings, bool $caseSensitive = true): bool
- * @method equals(string $string, bool $caseSensitive = true): bool
+ * @method bool contains(string $string, bool $caseSensitive = false)
+ * @method bool containsOneOf(array $strings, bool $caseSensitive = false)
+ * @method bool beginsWith(string $string, bool $caseSensitive = true)
+ * @method bool beginsWithOneOf(array $strings, bool $caseSensitive = true)
+ * @method bool endsWith($string, $caseSensitive = true)
+ * @method bool endsWithOneOf(array $strings, bool $caseSensitive = true)
+ * @method bool equals(string $string, bool $caseSensitive = true)
  *
  * // from StringProperties
- * @method length(): int
+ * @method int length()
  *
  * // from StringTransformer
- * @method toLower(): StringBuffer
- * @method toUpper(): StringBuffer
- * @method toFloat(): float
- * @method toInteger(): float
+ * @method StringBuffer toLower()
+ * @method StringBuffer toUpper()
+ * @method float toFloat()
+ * @method int toInteger()
  *
  * // from StringManipulator
- * @method trim(string $charList = " \t\n\r\0\x0B"): StringBuffer
+ * @method StringBuffer trim(string $charList = " \t\n\r\0\x0B")
+ * @method StringBuffer trimLeft(string $charList = " \t\n\r\0\x0B")
+ * @method StringBuffer trimRight(string $charList = " \t\n\r\0\x0B")
+ * @method StringBuffer cutLeft(string $string, $caseSensitive = false)
+ * @method StringBuffer cutRight(string $string, $caseSensitive = false)
+ * @method StringBuffer replace($search, $replace): StringBuffer
+ * @method StringBuffer remove($string)
  */
 class StringBuffer
 {
@@ -92,6 +98,12 @@ class StringBuffer
      */
     private $manipulatorMethods = [
         'trim',
+        'trimLeft',
+        'trimRight',
+        'cutLeft',
+        'cutRight',
+        'replace',
+        'remove',
     ];
 
     /**
