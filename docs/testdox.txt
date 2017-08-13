@@ -1,0 +1,19 @@
+Simlux\String\Test\StringBuffer
+ [x] Create factory
+ [x] To string
+ [x] Set string
+ [x] Append
+ [x] Append if
+ [x] Prepend
+ [x] Prepend if
+ [x] Conditions
+ [x] Properties
+ [x] That unknown method exception is thrown
+ [x] Lazy loading string conditions
+ [x] Lazy loading string properties
+
+Simlux\String\Test\StringConditions
+ [x] Contains
+ [x] Contains one of
+ [x] Begins with
+
