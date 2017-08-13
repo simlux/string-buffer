@@ -6,6 +6,7 @@ use Simlux\String\Exceptions\UnknownMethodException;
 use Simlux\String\StringBuffer;
 use Simlux\String\StringConditions;
 use Simlux\String\StringProperties;
+use Simlux\String\StringTransformer;
 
 class StringBufferTest extends TestCase
 {
@@ -17,7 +18,9 @@ class StringBufferTest extends TestCase
     public function testToString()
     {
         $this->assertSame('test', StringBuffer::create('test')->toString());
+        $this->assertSame('test', StringBuffer::create('test')->__toString());
         $this->assertInternalType('string', StringBuffer::create('test')->toString());
+        $this->assertInternalType('string', StringBuffer::create('test')->__toString());
     }
 
     public function testSetString()
@@ -60,6 +63,11 @@ class StringBufferTest extends TestCase
     public function testProperties()
     {
         $this->assertInstanceOf(StringProperties::class, StringBuffer::create('')->properties());
+    }
+
+    public function testTransformer()
+    {
+        $this->assertInstanceOf(StringTransformer::class, StringBuffer::create('')->transformer());
     }
 
     public function testThatUnknownMethodExceptionIsThrown()

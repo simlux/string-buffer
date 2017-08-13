@@ -8,6 +8,7 @@ Simlux\String\Test\StringBuffer
  [x] Prepend if
  [x] Conditions
  [x] Properties
+ [x] Transformer
  [x] That unknown method exception is thrown
  [x] Lazy loading string conditions
  [x] Lazy loading string properties
@@ -20,4 +21,8 @@ Simlux\String\Test\StringConditions
  [x] Ends with
  [x] Ends with one of
  [x] Equals
+
+Simlux\String\Test\StringTransformer
+ [x] To lower
+ [x] To upper
 

@@ -9,8 +9,21 @@ use Simlux\String\Exceptions\UnknownMethodException;
  *
  * @package Simlux\StringBuffer
  *
+ * // from StringConditions
  * @method contains(string $string, bool $caseSensitive = false): bool
+ * @method containsOneOf(array $strings, bool $caseSensitive = false): bool
+ * @method beginsWith(string $string, bool $caseSensitive = true): bool
+ * @method beginsWithOneOf(array $strings, bool $caseSensitive = true): bool
+ * @method endsWith($string, $caseSensitive = true): bool
+ * @method endsWithOneOf(array $strings, bool $caseSensitive = true): bool
+ * @method equals(string $string, bool $caseSensitive = true): bool
+ *
+ * // from StringProperties
  * @method length(): int
+ *
+ * // from StringTransformer
+ * @method toLower(): StringBuffer
+ * @method toUpper(): StringBuffer
  */
 class StringBuffer
 {
@@ -58,6 +71,7 @@ class StringBuffer
      */
     private $transformerMethods = [
         'toLower',
+        'toUpper',
     ];
 
     /**

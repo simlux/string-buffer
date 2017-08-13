@@ -12,4 +12,11 @@ class StringTransformer extends AbstractStringExtension
         return $this->string->setString(strtolower($this->string->toString()));
     }
 
+    /**
+     * @return StringBuffer
+     */
+    public function toUpper(): StringBuffer
+    {
+        return $this->string->setString(strtoupper($this->string->toString()));
+    }
 }
