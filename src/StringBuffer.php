@@ -49,6 +49,18 @@ class StringBuffer
     ];
 
     /**
+     * @var StringTransformer
+     */
+    private $transformer;
+
+    /**
+     * @var array
+     */
+    private $transformerMethods = [
+        'toLower',
+    ];
+
+    /**
      * StringBuffer constructor.
      *
      * @param string $string
@@ -85,6 +97,10 @@ class StringBuffer
             return call_user_func_array([$this->properties(), $name], $arguments);
         }
 
+        if (in_array($name, $this->transformerMethods)) {
+            return call_user_func_array([$this->transformer(), $name], $arguments);
+        }
+
         throw new UnknownMethodException($name);
     }
 
@@ -110,6 +126,18 @@ class StringBuffer
         }
 
         return $this->properties;
+    }
+
+    /**
+     * @return StringTransformer
+     */
+    public function transformer(): StringTransformer
+    {
+        if (is_null($this->transformer)) {
+            $this->transformer = new StringTransformer($this);
+        }
+
+        return $this->transformer;
     }
 
     /**

@@ -144,4 +144,180 @@ class StringConditionsTest extends TestCase
         $condition = new StringConditions(StringBuffer::create($string));
         $this->assertSame($expected, $condition->beginsWith($beginsWith, $caseSensitive));
     }
+
+    public function dataProviderForTestBeginsWithOneOf(): array
+    {
+        return [
+            0 => [
+                'string'        => 'foo',
+                'beginsWith'    => ['fo', 'ba'],
+                'caseSensitive' => false,
+                'expected'      => true,
+            ],
+            1 => [
+                'string'        => 'foo',
+                'beginsWith'    => ['bar', 'bas'],
+                'caseSensitive' => false,
+                'expected'      => false,
+            ],
+            2 => [
+                'string'        => 'foo',
+                'beginsWith'    => ['Ba', 'Fo'],
+                'caseSensitive' => true,
+                'expected'      => false,
+            ],
+            3 => [
+                'string'        => 'Foo',
+                'beginsWith'    => ['Fo', 'F'],
+                'caseSensitive' => true,
+                'expected'      => true,
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderForTestBeginsWithOneOf
+     *
+     * @param string $string
+     * @param array  $beginsWith
+     * @param bool   $caseSensitive
+     * @param bool   $expected
+     */
+    public function testBeginsWithOneOf(string $string, array $beginsWith, bool $caseSensitive, bool $expected)
+    {
+        $condition = new StringConditions(StringBuffer::create($string));
+        $this->assertSame($expected, $condition->beginsWithOneOf($beginsWith, $caseSensitive));
+    }
+
+    public function dataProviderForTestEndsWith(): array
+    {
+        return [
+            0 => [
+                'string'        => 'foo',
+                'endsWith'      => 'oo',
+                'caseSensitive' => false,
+                'expected'      => true,
+            ],
+            1 => [
+                'string'        => 'foo',
+                'endsWith'      => 'bar',
+                'caseSensitive' => false,
+                'expected'      => false,
+            ],
+            2 => [
+                'string'        => 'fOo',
+                'endsWith'      => 'oo',
+                'caseSensitive' => true,
+                'expected'      => false,
+            ],
+            3 => [
+                'string'        => 'FOo',
+                'endsWith'      => 'Oo',
+                'caseSensitive' => true,
+                'expected'      => true,
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderForTestEndsWith
+     *
+     * @param string $string
+     * @param string $endsWith
+     * @param bool   $caseSensitive
+     * @param bool   $expected
+     */
+    public function testEndsWith(string $string, string $endsWith, bool $caseSensitive, bool $expected)
+    {
+        $condition = new StringConditions(StringBuffer::create($string));
+        $this->assertSame($expected, $condition->endsWith($endsWith, $caseSensitive));
+    }
+
+    public function dataProviderForTestEndsWithOneOf(): array
+    {
+        return [
+            0 => [
+                'string'        => 'foo',
+                'endsWith'      => ['oo', 'ar'],
+                'caseSensitive' => false,
+                'expected'      => true,
+            ],
+            1 => [
+                'string'        => 'foo',
+                'endsWith'      => ['bar', 'bas'],
+                'caseSensitive' => false,
+                'expected'      => false,
+            ],
+            2 => [
+                'string'        => 'foo',
+                'endsWith'      => ['ooo', 'of'],
+                'caseSensitive' => true,
+                'expected'      => false,
+            ],
+            3 => [
+                'string'        => 'Foo',
+                'endsWith'      => ['oo', 'F'],
+                'caseSensitive' => true,
+                'expected'      => true,
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderForTestEndsWithOneOf
+     *
+     * @param string $string
+     * @param array  $endsWith
+     * @param bool   $caseSensitive
+     * @param bool   $expected
+     */
+    public function testEndsWithOneOf(string $string, array $endsWith, bool $caseSensitive, bool $expected)
+    {
+        $condition = new StringConditions(StringBuffer::create($string));
+        $this->assertSame($expected, $condition->endsWithOneOf($endsWith, $caseSensitive));
+    }
+
+    public function dataProviderForTestEquals(): array
+    {
+        return [
+            0 => [
+                'string'        => 'Foo',
+                'equals'        => 'Foo',
+                'caseSensitive' => true,
+                'expected'      => true,
+            ],
+            1 => [
+                'string'        => 'Foo',
+                'equals'        => 'foo',
+                'caseSensitive' => true,
+                'expected'      => false,
+            ],
+            2 => [
+                'string'        => 'Foo',
+                'equals'        => 'foo',
+                'caseSensitive' => false,
+                'expected'      => true,
+            ],
+            3 => [
+                'string'        => 'Foo',
+                'equals'        => 'fo',
+                'caseSensitive' => false,
+                'expected'      => false,
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderForTestEquals
+     *
+     * @param string $string
+     * @param string $equals
+     * @param bool   $caseSensitive
+     * @param bool   $expected
+     */
+    public function testEquals(string $string, string $equals, bool $caseSensitive, bool $expected)
+    {
+        $condition = new StringConditions(StringBuffer::create($string));
+        $this->assertSame($expected, $condition->equals($equals, $caseSensitive));
+    }
 }

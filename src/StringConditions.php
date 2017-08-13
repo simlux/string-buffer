@@ -81,7 +81,7 @@ class StringConditions extends AbstractStringExtension
             return substr(strtolower($this->string->toString()), $length) === strtolower($string);
         }
 
-        return substr($this->string, $length) === $string;
+        return substr($this->string->toString(), $length) === $string;
     }
 
     /**
@@ -99,5 +99,20 @@ class StringConditions extends AbstractStringExtension
         }
 
         return false;
+    }
+
+    /**
+     * @param string $string
+     * @param bool   $caseSensitive
+     *
+     * @return bool
+     */
+    public function equals(string $string, bool $caseSensitive = true): bool
+    {
+        if ($caseSensitive) {
+            return $this->string->toString() === $string;
+        }
+
+        return strtolower($this->string->toString()) === strtolower($string);
     }
 }

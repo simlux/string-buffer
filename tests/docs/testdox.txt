@@ -16,4 +16,8 @@ Simlux\String\Test\StringConditions
  [x] Contains
  [x] Contains one of
  [x] Begins with
+ [x] Begins with one of
+ [x] Ends with
+ [x] Ends with one of
+ [x] Equals
 
