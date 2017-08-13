@@ -19,8 +19,8 @@
         </whitelist>
     </filter>
     <logging>
-        <log type="coverage-clover" target="docs/coverage.xml"/>
-        <log type="testdox-text" target="docs/testdox.txt"/>
+        <log type="coverage-clover" target="tests/docs/coverage.xml"/>
+        <log type="testdox-text" target="tests/docs/testdox.txt"/>
         <!--log type="coverage-html" target="docs/phpunit/code_coverage" lowUpperBound="35" highLowerBound="70"/-->
     </logging>
 </phpunit>
