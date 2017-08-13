@@ -10,6 +10,7 @@ composer require simlux/string-buffer
 
 ## Examples
 ```php
+<?php
 use Simlux\String\StringBuffer();
 
 $buffer = new StringBuffer('test');
