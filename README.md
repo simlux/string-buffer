@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/simlux/string-buffer.svg?branch=master)](https://travis-ci.org/simlux/string-buffer)
-
-# StringBuffer
+# StringBuffer [![Build Status](https://travis-ci.org/simlux/string-buffer.svg?branch=master)](https://travis-ci.org/simlux/string-buffer)
 Manipulate strings object oriented.
 
 ## Installation
