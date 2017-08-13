@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/simlux/string-buffer/php.svg?branch=master)](https://travis-ci.org/simlux/string-buffer)
+[![Build Status](https://travis-ci.org/simlux/string-buffer.svg?branch=master)](https://travis-ci.org/simlux/string-buffer)
 
 # StringBuffer
 Manipulate strings object oriented.
