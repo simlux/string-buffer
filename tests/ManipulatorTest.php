@@ -131,4 +131,32 @@ class ManipulatorTest extends TestCase
     {
         $this->assertSame($expected, StringBuffer::create($string)->replace($search, $replace)->toString());
     }
+
+    public function dataProviderForTestRemove(): array
+    {
+        return [
+            0 => [
+                'string'   => 'test',
+                'remove'   => 'st',
+                'expected' => 'te',
+            ],
+            1 => [
+                'string'   => 'test',
+                'remove'   => 'ST',
+                'expected' => 'test',
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderForTestRemove
+     *
+     * @param string $string
+     * @param string $remove
+     * @param string $expected
+     */
+    public function testRemove(string $string, string $remove, string $expected)
+    {
+        $this->assertSame($expected, StringBuffer::create($string)->remove($remove)->toString());
+    }
 }

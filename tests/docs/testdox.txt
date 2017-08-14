@@ -29,6 +29,7 @@ Simlux\String\Test\Manipulator
  [x] Cut left
  [x] Cut right
  [x] Replace
+ [x] Remove
 
 Simlux\String\Test\Transformer
  [x] To lower
