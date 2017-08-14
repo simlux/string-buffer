@@ -2,6 +2,7 @@
 
 namespace Simlux\String;
 
+use Illuminate\Support\Str;
 use Simlux\String\Exceptions\UnknownExtensionException;
 use Simlux\String\Exceptions\UnknownMethodException;
 use Simlux\String\Extensions\AbstractStringExtension;
@@ -15,7 +16,7 @@ use Simlux\String\Extensions\Transformer;
  *
  * @package Simlux\StringBuffer
  *
- * // from StringConditions
+ **** from StringConditions
  * @method bool contains(string $string, bool $caseSensitive = false)
  * @method bool containsOneOf(array $strings, bool $caseSensitive = false)
  * @method bool beginsWith(string $string, bool $caseSensitive = true)
@@ -24,7 +25,7 @@ use Simlux\String\Extensions\Transformer;
  * @method bool endsWithOneOf(array $strings, bool $caseSensitive = true)
  * @method bool equals(string $string, bool $caseSensitive = true)
  *
- * // from StringProperties
+ **** from StringProperties
  * @method int length()
  *
  * // from StringTransformer
@@ -33,7 +34,7 @@ use Simlux\String\Extensions\Transformer;
  * @method float toFloat()
  * @method int toInteger()
  *
- * // from StringManipulator
+ **** from StringManipulator
  * @method StringBuffer trim(string $charList = " \t\n\r\0\x0B")
  * @method StringBuffer trimLeft(string $charList = " \t\n\r\0\x0B")
  * @method StringBuffer trimRight(string $charList = " \t\n\r\0\x0B")
@@ -55,43 +56,14 @@ class StringBuffer
     private $conditions;
 
     /**
-     * @var array
-     */
-    private $conditionMethods = [
-        'contains',
-        'containsOneOf',
-        'beginsWith',
-        'beginsWithOneOf',
-        'endsWith',
-        'endsWithOneOf',
-    ];
-
-    /**
      * @var Properties
      */
     private $properties;
 
     /**
-     * @var array
-     */
-    private $propertyMethods = [
-        'length',
-    ];
-
-    /**
      * @var Transformer
      */
     private $transformer;
-
-    /**
-     * @var array
-     */
-    private $transformerMethods = [
-        'toLower',
-        'toUpper',
-        'toFloat',
-        'toInteger',
-    ];
 
     /**
      * @var Manipulator
@@ -101,14 +73,33 @@ class StringBuffer
     /**
      * @var array
      */
-    private $manipulatorMethods = [
-        'trim',
-        'trimLeft',
-        'trimRight',
-        'cutLeft',
-        'cutRight',
-        'replace',
-        'remove',
+    private $extensions = [
+        'conditions'  => [
+            'contains',
+            'containsOneOf',
+            'beginsWith',
+            'beginsWithOneOf',
+            'endsWith',
+            'endsWithOneOf',
+        ],
+        'properties'  => [
+            'length',
+        ],
+        'transformer' => [
+            'toLower',
+            'toUpper',
+            'toFloat',
+            'toInteger',
+        ],
+        'manipulator' => [
+            'trim',
+            'trimLeft',
+            'trimRight',
+            'cutLeft',
+            'cutRight',
+            'replace',
+            'remove',
+        ],
     ];
 
     /**
@@ -160,7 +151,7 @@ class StringBuffer
                 break;
 
             default:
-                throw new UnknownExtensionException('sad');
+                throw new UnknownExtensionException($extension);
 
         }
 
@@ -176,14 +167,7 @@ class StringBuffer
      */
     public function __call(string $name, array $arguments)
     {
-        $extensions = [
-            'conditions'  => $this->conditionMethods,
-            'properties'  => $this->propertyMethods,
-            'transformer' => $this->transformerMethods,
-            'manipulator' => $this->manipulatorMethods,
-        ];
-
-        foreach ($extensions as $key => $methods) {
+        foreach ($this->extensions as $key => $methods) {
             if (in_array($name, $methods)) {
                 return call_user_func_array([$this->getExtension($key), $name], $arguments);
             }
@@ -323,11 +307,36 @@ class StringBuffer
     {
         if ($condition) {
             return $this->prepend($string);
-        } else {
-            if (!is_null($else)) {
-                return $this->prepend($else);
-            }
+        } else if (!is_null($else)) {
+            return $this->prepend($else);
         }
+
+        return $this;
+    }
+
+    /**
+     * @param bool $ucFirst
+     *
+     * @return StringBuffer
+     */
+    public function camelCase(bool $ucFirst = false): StringBuffer
+    {
+        $this->string = Str::camel($this->string);
+        if ($ucFirst) {
+            $this->string = ucfirst($this->string);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $delimiter
+     *
+     * @return StringBuffer
+     */
+    public function snakeCase(string $delimiter = '_'): StringBuffer
+    {
+        $this->string = Str::snake($this->string, $delimiter);
 
         return $this;
     }

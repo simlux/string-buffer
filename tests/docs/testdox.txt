@@ -12,6 +12,8 @@ Simlux\String\Test\Buffer
  [x] That unknown method exception is thrown
  [x] Lazy loading string conditions
  [x] Lazy loading string properties
+ [x] Camel case
+ [x] Camel snake case
 
 Simlux\String\Test\Conditions
  [x] Contains

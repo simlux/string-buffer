@@ -88,4 +88,80 @@ class BufferTest extends TestCase
     {
         $this->assertSame(4, StringBuffer::create('test')->length());
     }
+
+    public function dataProviderForTestCamelCase(): array
+    {
+        return [
+            0 => [
+                'string'   => 'test case',
+                'ucFirst'  => false,
+                'expected' => 'testCase',
+            ],
+            1 => [
+                'string'   => 'test_case',
+                'ucFirst'  => false,
+                'expected' => 'testCase',
+            ],
+            2 => [
+                'string'   => 'test-case',
+                'ucFirst'  => false,
+                'expected' => 'testCase',
+            ],
+            3 => [
+                'string'   => 'test case',
+                'ucFirst'  => true,
+                'expected' => 'TestCase',
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderForTestCamelCase
+     *
+     * @param string $string
+     * @param bool   $ucFirst
+     * @param string $expected
+     */
+    public function testCamelCase(string $string, bool $ucFirst, string $expected)
+    {
+        $this->assertSame($expected, StringBuffer::create($string)->camelCase($ucFirst)->toString());
+    }
+
+    public function dataProviderForTestSnakeCase(): array
+    {
+        return [
+            0 => [
+                'string'    => 'testCase',
+                'delimiter' => '_',
+                'expected'  => 'test_case',
+            ],
+            1 => [
+                'string'    => 'testCase',
+                'delimiter' => '::',
+                'expected'  => 'test::case',
+            ],
+            2 => [
+                'string'    => 'test case',
+                'delimiter' => '_',
+                'expected'  => 'testcase',
+            ],
+            3 => [
+                'string'    => 'test Case',
+                'delimiter' => '_',
+                'expected'  => 'test_case',
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderForTestSnakeCase
+     *
+     * @param string $string
+     * @param string $delimiter
+     * @param string $expected
+     */
+    public function testCamelSnakeCase(string $string, string $delimiter, string $expected)
+    {
+        $this->assertSame($expected, StringBuffer::create($string)->snakeCase($delimiter)->toString());
+    }
 }
