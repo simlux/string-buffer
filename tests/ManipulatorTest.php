@@ -92,7 +92,7 @@ class ManipulatorTest extends TestCase
      */
     public function testCutRight(string $string, string $cut, bool $caseSensitive, string $expected)
     {
-        $this->assertSame($expected, StringBuffer::create($string)->cutLeft($cut, $caseSensitive)->toString());
+        $this->assertSame($expected, StringBuffer::create($string)->cutRight($cut, $caseSensitive)->toString());
     }
 
     public function dataProviderForTestReplace(): array

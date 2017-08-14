@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1502670866">
-  <project timestamp="1502670866">
+<coverage generated="1502739769">
+  <project timestamp="1502739769">
     <package name="Simlux\String\Exceptions">
       <file name="/home/simon/repositories/string-buffer/src/Exceptions/UnknownExtensionException.php">
         <class name="UnknownExtensionException" namespace="Simlux\String\Exceptions">
@@ -38,20 +38,20 @@
         <line num="31" type="stmt" count="4"/>
         <line num="32" type="stmt" count="4"/>
         <line num="36" type="stmt" count="2"/>
-        <line num="45" type="method" name="beginsWith" visibility="public" complexity="2" crap="2" count="14"/>
-        <line num="47" type="stmt" count="14"/>
-        <line num="48" type="stmt" count="6"/>
-        <line num="51" type="stmt" count="8"/>
+        <line num="45" type="method" name="beginsWith" visibility="public" complexity="2" crap="2" count="11"/>
+        <line num="47" type="stmt" count="11"/>
+        <line num="48" type="stmt" count="5"/>
+        <line num="51" type="stmt" count="6"/>
         <line num="60" type="method" name="beginsWithOneOf" visibility="public" complexity="3" crap="3" count="4"/>
         <line num="62" type="stmt" count="4"/>
         <line num="63" type="stmt" count="4"/>
         <line num="64" type="stmt" count="4"/>
         <line num="68" type="stmt" count="2"/>
-        <line num="77" type="method" name="endsWith" visibility="public" complexity="2" crap="2" count="8"/>
-        <line num="79" type="stmt" count="8"/>
-        <line num="80" type="stmt" count="8"/>
-        <line num="81" type="stmt" count="4"/>
-        <line num="84" type="stmt" count="4"/>
+        <line num="77" type="method" name="endsWith" visibility="public" complexity="2" crap="2" count="11"/>
+        <line num="79" type="stmt" count="11"/>
+        <line num="80" type="stmt" count="11"/>
+        <line num="81" type="stmt" count="5"/>
+        <line num="84" type="stmt" count="6"/>
         <line num="93" type="method" name="endsWithOneOf" visibility="public" complexity="3" crap="3" count="4"/>
         <line num="95" type="stmt" count="4"/>
         <line num="96" type="stmt" count="4"/>
@@ -65,7 +65,7 @@
       </file>
       <file name="/home/simon/repositories/string-buffer/src/Extensions/Manipulator.php">
         <class name="Manipulator" namespace="Simlux\String\Extensions">
-          <metrics complexity="9" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="7" elements="18" coveredelements="12"/>
+          <metrics complexity="9" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="10" elements="18" coveredelements="16"/>
         </class>
         <line num="16" type="method" name="trim" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="18" type="stmt" count="1"/>
@@ -73,19 +73,19 @@
         <line num="28" type="stmt" count="1"/>
         <line num="36" type="method" name="trimRight" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="38" type="stmt" count="1"/>
-        <line num="47" type="method" name="cutLeft" visibility="public" complexity="2" crap="2" count="6"/>
-        <line num="49" type="stmt" count="6"/>
+        <line num="47" type="method" name="cutLeft" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="49" type="stmt" count="3"/>
         <line num="50" type="stmt" count="2"/>
-        <line num="53" type="stmt" count="6"/>
-        <line num="62" type="method" name="cutRight" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="64" type="stmt" count="0"/>
-        <line num="65" type="stmt" count="0"/>
-        <line num="68" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="3"/>
+        <line num="62" type="method" name="cutRight" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="64" type="stmt" count="3"/>
+        <line num="65" type="stmt" count="2"/>
+        <line num="68" type="stmt" count="3"/>
         <line num="77" type="method" name="replace" visibility="public" complexity="1" crap="1" count="3"/>
         <line num="79" type="stmt" count="3"/>
         <line num="87" type="method" name="remove" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="89" type="stmt" count="0"/>
-        <metrics loc="90" ncloc="52" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="7" elements="18" coveredelements="12"/>
+        <metrics loc="90" ncloc="52" classes="1" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="10" elements="18" coveredelements="16"/>
       </file>
       <file name="/home/simon/repositories/string-buffer/src/Extensions/Properties.php">
         <class name="Properties" namespace="Simlux\String\Extensions">
@@ -165,9 +165,9 @@
         <line num="248" type="stmt" count="55"/>
         <line num="254" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="4"/>
         <line num="256" type="stmt" count="4"/>
-        <line num="264" type="method" name="setString" visibility="public" complexity="1" crap="1" count="13"/>
-        <line num="266" type="stmt" count="13"/>
-        <line num="268" type="stmt" count="13"/>
+        <line num="264" type="method" name="setString" visibility="public" complexity="1" crap="1" count="15"/>
+        <line num="266" type="stmt" count="15"/>
+        <line num="268" type="stmt" count="15"/>
         <line num="276" type="method" name="append" visibility="public" complexity="1" crap="1" count="2"/>
         <line num="278" type="stmt" count="2"/>
         <line num="280" type="stmt" count="2"/>
@@ -189,6 +189,6 @@
         <metrics loc="334" ncloc="204" classes="1" methods="15" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="56" coveredstatements="55" elements="71" coveredelements="69"/>
       </file>
     </package>
-    <metrics files="8" loc="625" ncloc="394" classes="8" methods="35" coveredmethods="32" conditionals="0" coveredconditionals="0" statements="99" coveredstatements="94" elements="134" coveredelements="126"/>
+    <metrics files="8" loc="625" ncloc="394" classes="8" methods="35" coveredmethods="33" conditionals="0" coveredconditionals="0" statements="99" coveredstatements="97" elements="134" coveredelements="130"/>
   </project>
 </coverage>
