@@ -2,10 +2,10 @@
 
 namespace Simlux\String\Test;
 
+use Simlux\String\Extensions\Transformer;
 use Simlux\String\StringBuffer;
-use Simlux\String\StringTransformer;
 
-class StringTransformerTest extends TestCase
+class TransformerTest extends TestCase
 {
     public function dataProviderForTestToLower(): array
     {
@@ -29,7 +29,7 @@ class StringTransformerTest extends TestCase
      */
     public function testToLower(string $string, string $expected)
     {
-        $transformer = new StringTransformer(StringBuffer::create($string));
+        $transformer = new Transformer(StringBuffer::create($string));
         $this->assertSame($expected, $transformer->toLower()->toString());
     }
 
@@ -55,7 +55,7 @@ class StringTransformerTest extends TestCase
      */
     public function testToUpper(string $string, string $expected)
     {
-        $transformer = new StringTransformer(StringBuffer::create($string));
+        $transformer = new Transformer(StringBuffer::create($string));
         $this->assertSame($expected, $transformer->toUpper()->toString());
     }
 

@@ -1,6 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Simlux\String;
+namespace Simlux\String\Extensions;
+
+use Simlux\String\StringBuffer;
 
 abstract class AbstractStringExtension
 {

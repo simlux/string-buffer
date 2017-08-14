@@ -2,10 +2,10 @@
 
 namespace Simlux\String\Test;
 
+use Simlux\String\Extensions\Conditions;
 use Simlux\String\StringBuffer;
-use Simlux\String\StringConditions;
 
-class StringConditionsTest extends TestCase
+class ConditionsTest extends TestCase
 {
     public function dataProviderForTestContains(): array
     {
@@ -53,7 +53,7 @@ class StringConditionsTest extends TestCase
      */
     public function testContains(string $string, string $contains, bool $caseSensitive, bool $expected)
     {
-        $condition = new StringConditions(StringBuffer::create($string));
+        $condition = new Conditions(StringBuffer::create($string));
         $this->assertSame($expected, $condition->contains($contains, $caseSensitive));
     }
 
@@ -97,7 +97,7 @@ class StringConditionsTest extends TestCase
      */
     public function testContainsOneOf(string $string, array $contains, bool $caseSensitive, bool $expected)
     {
-        $condition = new StringConditions(StringBuffer::create($string));
+        $condition = new Conditions(StringBuffer::create($string));
         $this->assertSame($expected, $condition->containsOneOf($contains, $caseSensitive));
     }
 
@@ -141,7 +141,7 @@ class StringConditionsTest extends TestCase
      */
     public function testBeginsWith(string $string, string $beginsWith, bool $caseSensitive, bool $expected)
     {
-        $condition = new StringConditions(StringBuffer::create($string));
+        $condition = new Conditions(StringBuffer::create($string));
         $this->assertSame($expected, $condition->beginsWith($beginsWith, $caseSensitive));
     }
 
@@ -185,7 +185,7 @@ class StringConditionsTest extends TestCase
      */
     public function testBeginsWithOneOf(string $string, array $beginsWith, bool $caseSensitive, bool $expected)
     {
-        $condition = new StringConditions(StringBuffer::create($string));
+        $condition = new Conditions(StringBuffer::create($string));
         $this->assertSame($expected, $condition->beginsWithOneOf($beginsWith, $caseSensitive));
     }
 
@@ -229,7 +229,7 @@ class StringConditionsTest extends TestCase
      */
     public function testEndsWith(string $string, string $endsWith, bool $caseSensitive, bool $expected)
     {
-        $condition = new StringConditions(StringBuffer::create($string));
+        $condition = new Conditions(StringBuffer::create($string));
         $this->assertSame($expected, $condition->endsWith($endsWith, $caseSensitive));
     }
 
@@ -273,7 +273,7 @@ class StringConditionsTest extends TestCase
      */
     public function testEndsWithOneOf(string $string, array $endsWith, bool $caseSensitive, bool $expected)
     {
-        $condition = new StringConditions(StringBuffer::create($string));
+        $condition = new Conditions(StringBuffer::create($string));
         $this->assertSame($expected, $condition->endsWithOneOf($endsWith, $caseSensitive));
     }
 
@@ -317,7 +317,7 @@ class StringConditionsTest extends TestCase
      */
     public function testEquals(string $string, string $equals, bool $caseSensitive, bool $expected)
     {
-        $condition = new StringConditions(StringBuffer::create($string));
+        $condition = new Conditions(StringBuffer::create($string));
         $this->assertSame($expected, $condition->equals($equals, $caseSensitive));
     }
 }

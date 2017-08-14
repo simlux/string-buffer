@@ -1,95 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1502667618">
-  <project timestamp="1502667618">
-    <package name="Simlux\String">
-      <file name="/home/simon/repositories/string-buffer/src/AbstractStringExtension.php">
-        <class name="AbstractStringExtension" namespace="Simlux\String">
+<coverage generated="1502669917">
+  <project timestamp="1502669917">
+    <package name="Simlux\String\Exceptions">
+      <file name="/home/simon/repositories/string-buffer/src/Exceptions/UnknownExtensionException.php">
+        <class name="UnknownExtensionException" namespace="Simlux\String\Exceptions">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="6" ncloc="6" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/home/simon/repositories/string-buffer/src/Exceptions/UnknownMethodException.php">
+        <class name="UnknownMethodException" namespace="Simlux\String\Exceptions">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="6" ncloc="6" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="Simlux\String\Extensions">
+      <file name="/home/simon/repositories/string-buffer/src/Extensions/AbstractStringExtension.php">
+        <class name="AbstractStringExtension" namespace="Simlux\String\Extensions">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
         </class>
-        <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="49"/>
-        <line num="17" type="stmt" count="49"/>
-        <line num="18" type="stmt" count="49"/>
-        <metrics loc="18" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+        <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="49"/>
+        <line num="19" type="stmt" count="49"/>
+        <line num="20" type="stmt" count="49"/>
+        <metrics loc="20" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </file>
-      <file name="/home/simon/repositories/string-buffer/src/StringBuffer.php">
-        <class name="StringBuffer" namespace="Simlux\String" fullPackage="Simlux" package="Simlux">
-          <metrics complexity="29" methods="15" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="56" coveredstatements="55" elements="71" coveredelements="69"/>
-        </class>
-        <line num="114" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="57"/>
-        <line num="116" type="stmt" count="57"/>
-        <line num="117" type="stmt" count="57"/>
-        <line num="124" type="method" name="create" visibility="public" complexity="1" crap="1" count="56"/>
-        <line num="126" type="stmt" count="56"/>
-        <line num="136" type="method" name="getExtension" visibility="protected" complexity="5" crap="5.01" count="13"/>
-        <line num="138" type="stmt" count="13"/>
-        <line num="141" type="stmt" count="13"/>
-        <line num="142" type="stmt" count="4"/>
-        <line num="143" type="stmt" count="4"/>
-        <line num="145" type="stmt" count="12"/>
-        <line num="146" type="stmt" count="1"/>
-        <line num="147" type="stmt" count="1"/>
-        <line num="149" type="stmt" count="11"/>
-        <line num="150" type="stmt" count="2"/>
-        <line num="151" type="stmt" count="2"/>
-        <line num="153" type="stmt" count="9"/>
-        <line num="154" type="stmt" count="9"/>
-        <line num="155" type="stmt" count="9"/>
-        <line num="158" type="stmt" count="0"/>
-        <line num="162" type="stmt" count="13"/>
-        <line num="172" type="method" name="__call" visibility="public" complexity="3" crap="3" count="14"/>
-        <line num="175" type="stmt" count="14"/>
-        <line num="176" type="stmt" count="14"/>
-        <line num="177" type="stmt" count="14"/>
-        <line num="178" type="stmt" count="14"/>
-        <line num="181" type="stmt" count="14"/>
-        <line num="182" type="stmt" count="14"/>
-        <line num="183" type="stmt" count="14"/>
-        <line num="187" type="stmt" count="1"/>
-        <line num="193" type="method" name="conditions" visibility="public" complexity="2" crap="2" count="5"/>
-        <line num="195" type="stmt" count="5"/>
-        <line num="196" type="stmt" count="5"/>
-        <line num="199" type="stmt" count="5"/>
-        <line num="205" type="method" name="properties" visibility="public" complexity="2" crap="2" count="2"/>
-        <line num="207" type="stmt" count="2"/>
-        <line num="208" type="stmt" count="2"/>
-        <line num="211" type="stmt" count="2"/>
-        <line num="217" type="method" name="transformer" visibility="public" complexity="2" crap="2" count="3"/>
-        <line num="219" type="stmt" count="3"/>
-        <line num="220" type="stmt" count="3"/>
-        <line num="223" type="stmt" count="3"/>
-        <line num="229" type="method" name="manipulator" visibility="public" complexity="2" crap="2" count="9"/>
-        <line num="231" type="stmt" count="9"/>
-        <line num="232" type="stmt" count="9"/>
-        <line num="235" type="stmt" count="9"/>
-        <line num="241" type="method" name="toString" visibility="public" complexity="1" crap="1" count="52"/>
-        <line num="243" type="stmt" count="52"/>
-        <line num="249" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="4"/>
-        <line num="251" type="stmt" count="4"/>
-        <line num="259" type="method" name="setString" visibility="public" complexity="1" crap="1" count="13"/>
-        <line num="261" type="stmt" count="13"/>
-        <line num="263" type="stmt" count="13"/>
-        <line num="271" type="method" name="append" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="273" type="stmt" count="2"/>
-        <line num="275" type="stmt" count="2"/>
-        <line num="285" type="method" name="appendIf" visibility="public" complexity="3" crap="3" count="1"/>
-        <line num="287" type="stmt" count="1"/>
-        <line num="288" type="stmt" count="1"/>
-        <line num="290" type="stmt" count="1"/>
-        <line num="291" type="stmt" count="1"/>
-        <line num="295" type="stmt" count="1"/>
-        <line num="303" type="method" name="prepend" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="305" type="stmt" count="2"/>
-        <line num="307" type="stmt" count="2"/>
-        <line num="317" type="method" name="prependIf" visibility="public" complexity="3" crap="3" count="1"/>
-        <line num="319" type="stmt" count="1"/>
-        <line num="320" type="stmt" count="1"/>
-        <line num="322" type="stmt" count="1"/>
-        <line num="323" type="stmt" count="1"/>
-        <line num="327" type="stmt" count="1"/>
-        <metrics loc="329" ncloc="199" classes="1" methods="15" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="56" coveredstatements="55" elements="71" coveredelements="69"/>
-      </file>
-      <file name="/home/simon/repositories/string-buffer/src/StringConditions.php">
-        <class name="StringConditions" namespace="Simlux\String">
+      <file name="/home/simon/repositories/string-buffer/src/Extensions/Conditions.php">
+        <class name="Conditions" namespace="Simlux\String\Extensions">
           <metrics complexity="17" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="32" coveredelements="32"/>
         </class>
         <line num="13" type="method" name="contains" visibility="public" complexity="2" crap="2" count="10"/>
@@ -126,67 +63,132 @@
         <line num="116" type="stmt" count="2"/>
         <metrics loc="117" ncloc="75" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="32" coveredelements="32"/>
       </file>
-      <file name="/home/simon/repositories/string-buffer/src/StringManipulator.php">
-        <class name="StringManipulator" namespace="Simlux\String">
+      <file name="/home/simon/repositories/string-buffer/src/Extensions/Manipulator.php">
+        <class name="Manipulator" namespace="Simlux\String\Extensions">
           <metrics complexity="9" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="7" elements="18" coveredelements="12"/>
         </class>
-        <line num="14" type="method" name="trim" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="16" type="stmt" count="1"/>
-        <line num="24" type="method" name="trimLeft" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="26" type="stmt" count="1"/>
-        <line num="34" type="method" name="trimRight" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="36" type="stmt" count="1"/>
-        <line num="45" type="method" name="cutLeft" visibility="public" complexity="2" crap="2" count="3"/>
-        <line num="47" type="stmt" count="3"/>
-        <line num="48" type="stmt" count="2"/>
-        <line num="51" type="stmt" count="3"/>
-        <line num="60" type="method" name="cutRight" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="62" type="stmt" count="0"/>
-        <line num="63" type="stmt" count="0"/>
-        <line num="66" type="stmt" count="0"/>
-        <line num="75" type="method" name="replace" visibility="public" complexity="1" crap="1" count="3"/>
-        <line num="77" type="stmt" count="3"/>
-        <line num="85" type="method" name="remove" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="87" type="stmt" count="0"/>
-        <metrics loc="88" ncloc="50" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="7" elements="18" coveredelements="12"/>
+        <line num="16" type="method" name="trim" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="18" type="stmt" count="1"/>
+        <line num="26" type="method" name="trimLeft" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="28" type="stmt" count="1"/>
+        <line num="36" type="method" name="trimRight" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="47" type="method" name="cutLeft" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="49" type="stmt" count="3"/>
+        <line num="50" type="stmt" count="2"/>
+        <line num="53" type="stmt" count="3"/>
+        <line num="62" type="method" name="cutRight" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="68" type="stmt" count="0"/>
+        <line num="77" type="method" name="replace" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="79" type="stmt" count="3"/>
+        <line num="87" type="method" name="remove" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="89" type="stmt" count="0"/>
+        <metrics loc="90" ncloc="52" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="7" elements="18" coveredelements="12"/>
       </file>
-      <file name="/home/simon/repositories/string-buffer/src/StringProperties.php">
-        <class name="StringProperties" namespace="Simlux\String">
+      <file name="/home/simon/repositories/string-buffer/src/Extensions/Properties.php">
+        <class name="Properties" namespace="Simlux\String\Extensions">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
         <line num="10" type="method" name="length" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="12" type="stmt" count="1"/>
         <metrics loc="13" ncloc="10" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
-      <file name="/home/simon/repositories/string-buffer/src/StringTransformer.php">
-        <class name="StringTransformer" namespace="Simlux\String">
+      <file name="/home/simon/repositories/string-buffer/src/Extensions/Transformer.php">
+        <class name="Transformer" namespace="Simlux\String\Extensions">
           <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="8" coveredelements="8"/>
         </class>
-        <line num="10" type="method" name="toLower" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="12" type="stmt" count="2"/>
-        <line num="18" type="method" name="toUpper" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="20" type="stmt" count="2"/>
-        <line num="26" type="method" name="toFloat" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="28" type="stmt" count="1"/>
-        <line num="34" type="method" name="toInteger" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="36" type="stmt" count="1"/>
-        <metrics loc="37" ncloc="25" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="8" coveredelements="8"/>
+        <line num="12" type="method" name="toLower" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="14" type="stmt" count="2"/>
+        <line num="20" type="method" name="toUpper" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="22" type="stmt" count="2"/>
+        <line num="28" type="method" name="toFloat" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="36" type="method" name="toInteger" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="38" type="stmt" count="1"/>
+        <metrics loc="39" ncloc="27" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="8" coveredelements="8"/>
       </file>
     </package>
-    <package name="Simlux\String\Exceptions">
-      <file name="/home/simon/repositories/string-buffer/src/Exceptions/UnknownExtensionException.php">
-        <class name="UnknownExtensionException" namespace="Simlux\String\Exceptions">
-          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    <package name="Simlux\String">
+      <file name="/home/simon/repositories/string-buffer/src/StringBuffer.php">
+        <class name="StringBuffer" namespace="Simlux\String" fullPackage="Simlux" package="Simlux">
+          <metrics complexity="29" methods="15" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="56" coveredstatements="55" elements="71" coveredelements="69"/>
         </class>
-        <metrics loc="6" ncloc="6" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-      </file>
-      <file name="/home/simon/repositories/string-buffer/src/Exceptions/UnknownMethodException.php">
-        <class name="UnknownMethodException" namespace="Simlux\String\Exceptions">
-          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-        </class>
-        <metrics loc="6" ncloc="6" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <line num="119" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="57"/>
+        <line num="121" type="stmt" count="57"/>
+        <line num="122" type="stmt" count="57"/>
+        <line num="129" type="method" name="create" visibility="public" complexity="1" crap="1" count="56"/>
+        <line num="131" type="stmt" count="56"/>
+        <line num="141" type="method" name="getExtension" visibility="protected" complexity="5" crap="5.01" count="13"/>
+        <line num="143" type="stmt" count="13"/>
+        <line num="146" type="stmt" count="13"/>
+        <line num="147" type="stmt" count="4"/>
+        <line num="148" type="stmt" count="4"/>
+        <line num="150" type="stmt" count="12"/>
+        <line num="151" type="stmt" count="1"/>
+        <line num="152" type="stmt" count="1"/>
+        <line num="154" type="stmt" count="11"/>
+        <line num="155" type="stmt" count="2"/>
+        <line num="156" type="stmt" count="2"/>
+        <line num="158" type="stmt" count="9"/>
+        <line num="159" type="stmt" count="9"/>
+        <line num="160" type="stmt" count="9"/>
+        <line num="163" type="stmt" count="0"/>
+        <line num="167" type="stmt" count="13"/>
+        <line num="177" type="method" name="__call" visibility="public" complexity="3" crap="3" count="14"/>
+        <line num="180" type="stmt" count="14"/>
+        <line num="181" type="stmt" count="14"/>
+        <line num="182" type="stmt" count="14"/>
+        <line num="183" type="stmt" count="14"/>
+        <line num="186" type="stmt" count="14"/>
+        <line num="187" type="stmt" count="14"/>
+        <line num="188" type="stmt" count="14"/>
+        <line num="192" type="stmt" count="1"/>
+        <line num="198" type="method" name="conditions" visibility="public" complexity="2" crap="2" count="5"/>
+        <line num="200" type="stmt" count="5"/>
+        <line num="201" type="stmt" count="5"/>
+        <line num="204" type="stmt" count="5"/>
+        <line num="210" type="method" name="properties" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="212" type="stmt" count="2"/>
+        <line num="213" type="stmt" count="2"/>
+        <line num="216" type="stmt" count="2"/>
+        <line num="222" type="method" name="transformer" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="224" type="stmt" count="3"/>
+        <line num="225" type="stmt" count="3"/>
+        <line num="228" type="stmt" count="3"/>
+        <line num="234" type="method" name="manipulator" visibility="public" complexity="2" crap="2" count="9"/>
+        <line num="236" type="stmt" count="9"/>
+        <line num="237" type="stmt" count="9"/>
+        <line num="240" type="stmt" count="9"/>
+        <line num="246" type="method" name="toString" visibility="public" complexity="1" crap="1" count="52"/>
+        <line num="248" type="stmt" count="52"/>
+        <line num="254" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="256" type="stmt" count="4"/>
+        <line num="264" type="method" name="setString" visibility="public" complexity="1" crap="1" count="13"/>
+        <line num="266" type="stmt" count="13"/>
+        <line num="268" type="stmt" count="13"/>
+        <line num="276" type="method" name="append" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="278" type="stmt" count="2"/>
+        <line num="280" type="stmt" count="2"/>
+        <line num="290" type="method" name="appendIf" visibility="public" complexity="3" crap="3" count="1"/>
+        <line num="292" type="stmt" count="1"/>
+        <line num="293" type="stmt" count="1"/>
+        <line num="295" type="stmt" count="1"/>
+        <line num="296" type="stmt" count="1"/>
+        <line num="300" type="stmt" count="1"/>
+        <line num="308" type="method" name="prepend" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="310" type="stmt" count="2"/>
+        <line num="312" type="stmt" count="2"/>
+        <line num="322" type="method" name="prependIf" visibility="public" complexity="3" crap="3" count="1"/>
+        <line num="324" type="stmt" count="1"/>
+        <line num="325" type="stmt" count="1"/>
+        <line num="327" type="stmt" count="1"/>
+        <line num="328" type="stmt" count="1"/>
+        <line num="332" type="stmt" count="1"/>
+        <metrics loc="334" ncloc="204" classes="1" methods="15" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="56" coveredstatements="55" elements="71" coveredelements="69"/>
       </file>
     </package>
-    <metrics files="8" loc="614" ncloc="383" classes="8" methods="35" coveredmethods="32" conditionals="0" coveredconditionals="0" statements="99" coveredstatements="94" elements="134" coveredelements="126"/>
+    <metrics files="8" loc="625" ncloc="394" classes="8" methods="35" coveredmethods="32" conditionals="0" coveredconditionals="0" statements="99" coveredstatements="94" elements="134" coveredelements="126"/>
   </project>
 </coverage>

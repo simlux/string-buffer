@@ -4,6 +4,11 @@ namespace Simlux\String;
 
 use Simlux\String\Exceptions\UnknownExtensionException;
 use Simlux\String\Exceptions\UnknownMethodException;
+use Simlux\String\Extensions\AbstractStringExtension;
+use Simlux\String\Extensions\Conditions;
+use Simlux\String\Extensions\Manipulator;
+use Simlux\String\Extensions\Properties;
+use Simlux\String\Extensions\Transformer;
 
 /**
  * Class StringBuffer
@@ -45,7 +50,7 @@ class StringBuffer
     private $string;
 
     /**
-     * @var StringConditions
+     * @var Conditions
      */
     private $conditions;
 
@@ -62,7 +67,7 @@ class StringBuffer
     ];
 
     /**
-     * @var StringProperties
+     * @var Properties
      */
     private $properties;
 
@@ -74,7 +79,7 @@ class StringBuffer
     ];
 
     /**
-     * @var StringTransformer
+     * @var Transformer
      */
     private $transformer;
 
@@ -89,7 +94,7 @@ class StringBuffer
     ];
 
     /**
-     * @var StringManipulator
+     * @var Manipulator
      */
     private $manipulator;
 
@@ -188,48 +193,48 @@ class StringBuffer
     }
 
     /**
-     * @return StringConditions
+     * @return Conditions
      */
-    public function conditions(): StringConditions
+    public function conditions(): Conditions
     {
         if (is_null($this->conditions)) {
-            $this->conditions = new StringConditions($this);
+            $this->conditions = new Conditions($this);
         }
 
         return $this->conditions;
     }
 
     /**
-     * @return StringProperties
+     * @return Properties
      */
-    public function properties(): StringProperties
+    public function properties(): Properties
     {
         if (is_null($this->properties)) {
-            $this->properties = new StringProperties($this);
+            $this->properties = new Properties($this);
         }
 
         return $this->properties;
     }
 
     /**
-     * @return StringTransformer
+     * @return Transformer
      */
-    public function transformer(): StringTransformer
+    public function transformer(): Transformer
     {
         if (is_null($this->transformer)) {
-            $this->transformer = new StringTransformer($this);
+            $this->transformer = new Transformer($this);
         }
 
         return $this->transformer;
     }
 
     /**
-     * @return StringManipulator
+     * @return Manipulator
      */
-    public function manipulator(): StringManipulator
+    public function manipulator(): Manipulator
     {
         if (is_null($this->manipulator)) {
-            $this->manipulator = new StringManipulator($this);
+            $this->manipulator = new Manipulator($this);
         }
 
         return $this->manipulator;

@@ -1,8 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Simlux\String;
+namespace Simlux\String\Extensions;
 
-class StringManipulator extends AbstractStringExtension
+use Simlux\String\StringBuffer;
+
+class Manipulator extends AbstractStringExtension
 {
     const CHARLIST = " \t\n\r\0\x0B";
 

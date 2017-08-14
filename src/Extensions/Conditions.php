@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Simlux\String;
+namespace Simlux\String\Extensions;
 
-class StringConditions extends AbstractStringExtension
+class Conditions extends AbstractStringExtension
 {
     /**
      * @param string $string

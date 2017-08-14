@@ -1,4 +1,4 @@
-Simlux\String\Test\StringBuffer
+Simlux\String\Test\Buffer
  [x] Create factory
  [x] To string
  [x] Set string
@@ -13,7 +13,7 @@ Simlux\String\Test\StringBuffer
  [x] Lazy loading string conditions
  [x] Lazy loading string properties
 
-Simlux\String\Test\StringConditions
+Simlux\String\Test\Conditions
  [x] Contains
  [x] Contains one of
  [x] Begins with
@@ -22,14 +22,14 @@ Simlux\String\Test\StringConditions
  [x] Ends with one of
  [x] Equals
 
-Simlux\String\Test\StringManipulator
+Simlux\String\Test\Manipulator
  [x] Trim
  [x] Left trim
  [x] Right trim
  [x] Left cut
  [x] Replace
 
-Simlux\String\Test\StringTransformer
+Simlux\String\Test\Transformer
  [x] To lower
  [x] To upper
  [x] To float

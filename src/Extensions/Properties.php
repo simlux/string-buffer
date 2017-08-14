@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Simlux\String;
+namespace Simlux\String\Extensions;
 
-class StringProperties extends AbstractStringExtension
+class Properties extends AbstractStringExtension
 {
     /**
      * @return int

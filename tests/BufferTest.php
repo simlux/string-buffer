@@ -3,12 +3,12 @@
 namespace Simlux\String\Test;
 
 use Simlux\String\Exceptions\UnknownMethodException;
+use Simlux\String\Extensions\Conditions;
+use Simlux\String\Extensions\Properties;
+use Simlux\String\Extensions\Transformer;
 use Simlux\String\StringBuffer;
-use Simlux\String\StringConditions;
-use Simlux\String\StringProperties;
-use Simlux\String\StringTransformer;
 
-class StringBufferTest extends TestCase
+class BufferTest extends TestCase
 {
     public function testCreateFactory()
     {
@@ -57,17 +57,17 @@ class StringBufferTest extends TestCase
 
     public function testConditions()
     {
-        $this->assertInstanceOf(StringConditions::class, StringBuffer::create('')->conditions());
+        $this->assertInstanceOf(Conditions::class, StringBuffer::create('')->conditions());
     }
 
     public function testProperties()
     {
-        $this->assertInstanceOf(StringProperties::class, StringBuffer::create('')->properties());
+        $this->assertInstanceOf(Properties::class, StringBuffer::create('')->properties());
     }
 
     public function testTransformer()
     {
-        $this->assertInstanceOf(StringTransformer::class, StringBuffer::create('')->transformer());
+        $this->assertInstanceOf(Transformer::class, StringBuffer::create('')->transformer());
     }
 
     public function testThatUnknownMethodExceptionIsThrown()
