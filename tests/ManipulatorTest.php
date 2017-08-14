@@ -21,7 +21,7 @@ class ManipulatorTest extends TestCase
         $this->assertSame('  foobar', StringBuffer::create('  foobar  ')->trimRight()->toString());
     }
 
-    public function dataProviderForTestLeftCut(): array
+    public function dataProviderForTestCutLeft(): array
     {
         return [
             0 => [
@@ -46,14 +46,51 @@ class ManipulatorTest extends TestCase
     }
 
     /**
-     * @dataProvider dataProviderForTestLeftCut
+     * @dataProvider dataProviderForTestCutLeft
      *
      * @param string $string
      * @param string $cut
      * @param bool   $caseSensitive
      * @param string $expected
      */
-    public function testLeftCut(string $string, string $cut, bool $caseSensitive, string $expected)
+    public function testCutLeft(string $string, string $cut, bool $caseSensitive, string $expected)
+    {
+        $this->assertSame($expected, StringBuffer::create($string)->cutLeft($cut, $caseSensitive)->toString());
+    }
+
+    public function dataProviderForTestCutRight(): array
+    {
+        return [
+            0 => [
+                'string'        => 'foobar',
+                'cut'           => 'bar',
+                'caseSensitive' => false,
+                'expected'      => 'foo',
+            ],
+            1 => [
+                'string'        => 'foobar',
+                'cut'           => 'Bar',
+                'caseSensitive' => true,
+                'expected'      => 'foobar',
+            ],
+            2 => [
+                'string'        => 'FoObAr',
+                'cut'           => 'bAr',
+                'caseSensitive' => true,
+                'expected'      => 'FoO',
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderForTestCutRight
+     *
+     * @param string $string
+     * @param string $cut
+     * @param bool   $caseSensitive
+     * @param string $expected
+     */
+    public function testCutRight(string $string, string $cut, bool $caseSensitive, string $expected)
     {
         $this->assertSame($expected, StringBuffer::create($string)->cutLeft($cut, $caseSensitive)->toString());
     }

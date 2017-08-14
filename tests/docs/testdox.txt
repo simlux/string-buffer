@@ -26,7 +26,8 @@ Simlux\String\Test\Manipulator
  [x] Trim
  [x] Left trim
  [x] Right trim
- [x] Left cut
+ [x] Cut left
+ [ ] Cut right
  [x] Replace
 
 Simlux\String\Test\Transformer
