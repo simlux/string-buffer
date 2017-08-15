@@ -4,7 +4,7 @@ namespace Simlux\String\Extensions;
 
 use Simlux\String\StringBuffer;
 
-class Manipulator extends AbstractStringExtension
+class Manipulator extends AbstractExtension
 {
     const CHARLIST = " \t\n\r\0\x0B";
 

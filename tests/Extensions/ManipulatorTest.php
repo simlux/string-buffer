@@ -1,8 +1,9 @@
 <?php
 
-namespace Simlux\String\Test;
+namespace Simlux\String\Test\Extensions;
 
 use Simlux\String\StringBuffer;
+use Simlux\String\Test\TestCase;
 
 class ManipulatorTest extends TestCase
 {

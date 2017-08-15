@@ -4,7 +4,7 @@ namespace Simlux\String\Extensions;
 
 use Simlux\String\StringBuffer;
 
-abstract class AbstractStringExtension
+abstract class AbstractExtension
 {
     /**
      * @var StringBuffer

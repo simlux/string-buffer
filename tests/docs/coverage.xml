@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1502754685">
-  <project timestamp="1502754685">
+<coverage generated="1502759834">
+  <project timestamp="1502759834">
     <package name="Simlux\String\Exceptions">
       <file name="/home/simon/repositories/string-buffer/src/Exceptions/UnknownExtensionException.php">
         <class name="UnknownExtensionException" namespace="Simlux\String\Exceptions">
@@ -16,13 +16,13 @@
       </file>
     </package>
     <package name="Simlux\String\Extensions">
-      <file name="/home/simon/repositories/string-buffer/src/Extensions/AbstractStringExtension.php">
-        <class name="AbstractStringExtension" namespace="Simlux\String\Extensions">
+      <file name="/home/simon/repositories/string-buffer/src/Extensions/AbstractExtension.php">
+        <class name="AbstractExtension" namespace="Simlux\String\Extensions">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
         </class>
-        <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="54"/>
-        <line num="19" type="stmt" count="54"/>
-        <line num="20" type="stmt" count="54"/>
+        <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="55"/>
+        <line num="19" type="stmt" count="55"/>
+        <line num="20" type="stmt" count="55"/>
         <metrics loc="20" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </file>
       <file name="/home/simon/repositories/string-buffer/src/Extensions/Conditions.php">
@@ -91,8 +91,8 @@
         <class name="Properties" namespace="Simlux\String\Extensions">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <line num="10" type="method" name="length" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="12" type="stmt" count="1"/>
+        <line num="10" type="method" name="length" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="12" type="stmt" count="2"/>
         <metrics loc="13" ncloc="10" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
       <file name="/home/simon/repositories/string-buffer/src/Extensions/Transformer.php">
@@ -115,19 +115,19 @@
         <class name="StringBuffer" namespace="Simlux\String" fullPackage="Simlux" package="Simlux">
           <metrics complexity="32" methods="17" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="58" coveredstatements="57" elements="75" coveredelements="73"/>
         </class>
-        <line num="110" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="70"/>
-        <line num="112" type="stmt" count="70"/>
-        <line num="113" type="stmt" count="70"/>
-        <line num="120" type="method" name="create" visibility="public" complexity="1" crap="1" count="69"/>
-        <line num="122" type="stmt" count="69"/>
-        <line num="132" type="method" name="getExtension" visibility="protected" complexity="5" crap="5.01" count="18"/>
-        <line num="134" type="stmt" count="18"/>
-        <line num="137" type="stmt" count="18"/>
+        <line num="110" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="71"/>
+        <line num="112" type="stmt" count="71"/>
+        <line num="113" type="stmt" count="71"/>
+        <line num="120" type="method" name="create" visibility="public" complexity="1" crap="1" count="70"/>
+        <line num="122" type="stmt" count="70"/>
+        <line num="132" type="method" name="getExtension" visibility="protected" complexity="5" crap="5.01" count="19"/>
+        <line num="134" type="stmt" count="19"/>
+        <line num="137" type="stmt" count="19"/>
         <line num="138" type="stmt" count="7"/>
         <line num="139" type="stmt" count="7"/>
-        <line num="141" type="stmt" count="17"/>
-        <line num="142" type="stmt" count="1"/>
-        <line num="143" type="stmt" count="1"/>
+        <line num="141" type="stmt" count="18"/>
+        <line num="142" type="stmt" count="2"/>
+        <line num="143" type="stmt" count="2"/>
         <line num="145" type="stmt" count="16"/>
         <line num="146" type="stmt" count="2"/>
         <line num="147" type="stmt" count="2"/>
@@ -135,20 +135,20 @@
         <line num="150" type="stmt" count="14"/>
         <line num="151" type="stmt" count="14"/>
         <line num="154" type="stmt" count="0"/>
-        <line num="158" type="stmt" count="18"/>
-        <line num="168" type="method" name="__call" visibility="public" complexity="3" crap="3" count="19"/>
-        <line num="170" type="stmt" count="19"/>
-        <line num="171" type="stmt" count="19"/>
-        <line num="172" type="stmt" count="19"/>
+        <line num="158" type="stmt" count="19"/>
+        <line num="168" type="method" name="__call" visibility="public" complexity="3" crap="3" count="20"/>
+        <line num="170" type="stmt" count="20"/>
+        <line num="171" type="stmt" count="20"/>
+        <line num="172" type="stmt" count="20"/>
         <line num="176" type="stmt" count="1"/>
         <line num="182" type="method" name="conditions" visibility="public" complexity="2" crap="2" count="8"/>
         <line num="184" type="stmt" count="8"/>
         <line num="185" type="stmt" count="8"/>
         <line num="188" type="stmt" count="8"/>
-        <line num="194" type="method" name="properties" visibility="public" complexity="2" crap="2" count="2"/>
-        <line num="196" type="stmt" count="2"/>
-        <line num="197" type="stmt" count="2"/>
-        <line num="200" type="stmt" count="2"/>
+        <line num="194" type="method" name="properties" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="196" type="stmt" count="3"/>
+        <line num="197" type="stmt" count="3"/>
+        <line num="200" type="stmt" count="3"/>
         <line num="206" type="method" name="transformer" visibility="public" complexity="2" crap="2" count="3"/>
         <line num="208" type="stmt" count="3"/>
         <line num="209" type="stmt" count="3"/>
@@ -157,8 +157,8 @@
         <line num="220" type="stmt" count="14"/>
         <line num="221" type="stmt" count="14"/>
         <line num="224" type="stmt" count="14"/>
-        <line num="230" type="method" name="toString" visibility="public" complexity="1" crap="1" count="65"/>
-        <line num="232" type="stmt" count="65"/>
+        <line num="230" type="method" name="toString" visibility="public" complexity="1" crap="1" count="66"/>
+        <line num="232" type="stmt" count="66"/>
         <line num="238" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="6"/>
         <line num="240" type="stmt" count="6"/>
         <line num="248" type="method" name="setString" visibility="public" complexity="1" crap="1" count="17"/>

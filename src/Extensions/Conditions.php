@@ -2,7 +2,7 @@
 
 namespace Simlux\String\Extensions;
 
-class Conditions extends AbstractStringExtension
+class Conditions extends AbstractExtension
 {
     /**
      * @param string $string

@@ -5,7 +5,7 @@ namespace Simlux\String;
 use Illuminate\Support\Str;
 use Simlux\String\Exceptions\UnknownExtensionException;
 use Simlux\String\Exceptions\UnknownMethodException;
-use Simlux\String\Extensions\AbstractStringExtension;
+use Simlux\String\Extensions\AbstractExtension;
 use Simlux\String\Extensions\Conditions;
 use Simlux\String\Extensions\Manipulator;
 use Simlux\String\Extensions\Properties;
@@ -125,11 +125,11 @@ class StringBuffer
     /**
      * @param string $extension
      *
-     * @return AbstractStringExtension
+     * @return AbstractExtension
      *
      * @throws UnknownExtensionException
      */
-    protected function getExtension(string $extension): AbstractStringExtension
+    protected function getExtension(string $extension): AbstractExtension
     {
         $instance = null;
         switch ($extension) {

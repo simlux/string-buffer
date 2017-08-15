@@ -8,7 +8,7 @@ use Simlux\String\Extensions\Properties;
 use Simlux\String\Extensions\Transformer;
 use Simlux\String\StringBuffer;
 
-class BufferTest extends TestCase
+class StringBufferTest extends TestCase
 {
     public function testCreateFactory()
     {

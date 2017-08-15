@@ -4,7 +4,7 @@ namespace Simlux\String\Extensions;
 
 use Simlux\String\StringBuffer;
 
-class Transformer extends AbstractStringExtension
+class Transformer extends AbstractExtension
 {
     /**
      * @return StringBuffer

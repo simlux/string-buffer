@@ -2,7 +2,7 @@
 
 namespace Simlux\String\Extensions;
 
-class Properties extends AbstractStringExtension
+class Properties extends AbstractExtension
 {
     /**
      * @return int

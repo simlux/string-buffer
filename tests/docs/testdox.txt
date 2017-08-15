@@ -1,4 +1,31 @@
-Simlux\String\Test\Buffer
+Simlux\String\Test\Extensions\Conditions
+ [x] Contains
+ [x] Contains one of
+ [x] Begins with
+ [x] Begins with one of
+ [x] Ends with
+ [x] Ends with one of
+ [x] Equals
+
+Simlux\String\Test\Extensions\Manipulator
+ [x] Trim
+ [x] Left trim
+ [x] Right trim
+ [x] Cut left
+ [x] Cut right
+ [x] Replace
+ [x] Remove
+
+Simlux\String\Test\Extensions\Properties
+ [x] Length
+
+Simlux\String\Test\Extensions\Transformer
+ [x] To lower
+ [x] To upper
+ [x] To float
+ [x] To integer
+
+Simlux\String\Test\StringBuffer
  [x] Create factory
  [x] To string
  [x] Set string
@@ -14,28 +41,4 @@ Simlux\String\Test\Buffer
  [x] Lazy loading string properties
  [x] Camel case
  [x] Camel snake case
-
-Simlux\String\Test\Conditions
- [x] Contains
- [x] Contains one of
- [x] Begins with
- [x] Begins with one of
- [x] Ends with
- [x] Ends with one of
- [x] Equals
-
-Simlux\String\Test\Manipulator
- [x] Trim
- [x] Left trim
- [x] Right trim
- [x] Cut left
- [x] Cut right
- [x] Replace
- [x] Remove
-
-Simlux\String\Test\Transformer
- [x] To lower
- [x] To upper
- [x] To float
- [x] To integer
 
