@@ -26,6 +26,7 @@ Simlux\String\Test\Extensions\Transformer
  [x] To integer
 
 Simlux\String\Test\StringBuffer
+ [x] That get extensions throws exception
  [x] Create factory
  [x] To string
  [x] Set string

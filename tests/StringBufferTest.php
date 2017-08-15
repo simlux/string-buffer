@@ -2,6 +2,7 @@
 
 namespace Simlux\String\Test;
 
+use Simlux\String\Exceptions\UnknownExtensionException;
 use Simlux\String\Exceptions\UnknownMethodException;
 use Simlux\String\Extensions\Conditions;
 use Simlux\String\Extensions\Properties;
@@ -10,6 +11,25 @@ use Simlux\String\StringBuffer;
 
 class StringBufferTest extends TestCase
 {
+
+    public function testThatGetExtensionsThrowsException()
+    {
+        $this->expectException(UnknownExtensionException::class);
+        $this->expectExceptionMessage('foobar');
+
+        $buffer = new StringBuffer('test');
+
+        $reflection = new \ReflectionClass($buffer);
+        $property   = $reflection->getProperty('extensions');
+        $property->setAccessible(true);
+
+        $extensions           = $property->getValue($buffer);
+        $extensions['foobar'] = ['foobar'];
+        $property->setValue($buffer, $extensions);
+
+        $buffer->foobar();
+    }
+
     public function testCreateFactory()
     {
         $this->assertInstanceOf(StringBuffer::class, StringBuffer::create(''));
