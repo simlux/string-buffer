@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1502820704">
-  <project timestamp="1502820704">
+<coverage generated="1502820815">
+  <project timestamp="1502820815">
     <package name="Simlux\String\Exceptions">
       <file name="/home/simon/repositories/string-buffer/src/Exceptions/UnknownExtensionException.php">
         <class name="UnknownExtensionException" namespace="Simlux\String\Exceptions">
