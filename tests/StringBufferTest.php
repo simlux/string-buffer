@@ -184,4 +184,54 @@ class StringBufferTest extends TestCase
     {
         $this->assertSame($expected, StringBuffer::create($string)->snakeCase($delimiter)->toString());
     }
+
+    public function dataProviderForTestSubstring(): array
+    {
+        return [
+            0 => [
+                'string'   => 'foobar',
+                'start'    => 0,
+                'length'   => 3,
+                'expected' => 'foo',
+            ],
+            1 => [
+                'string'   => 'foobar',
+                'start'    => -3,
+                'length'   => null,
+                'expected' => 'bar',
+            ],
+            2 => [
+                'string'   => 'foobar',
+                'start'    => 1,
+                'length'   => 2,
+                'expected' => 'oo',
+            ],
+            3 => [
+                'string'   => 'foobar',
+                'start'    => -4,
+                'length'   => 2,
+                'expected' => 'ob',
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderForTestSubstring
+     *
+     * @param string $string
+     * @param int    $start
+     * @param int    $length
+     * @param string $expected
+     */
+    public function testSubstring(string $string, int $start, int $length = null, string $expected)
+    {
+        $this->assertSame($expected, StringBuffer::create($string)->substring($start, $length)->toString());
+    }
+
+    public function testReverse()
+    {
+        $this->assertSame('raboof', StringBuffer::create('foobar')->reverse(false)->toString());
+        $this->assertSame('raböof', StringBuffer::create('foöbar')->reverse(true)->toString());
+    }
+
 }

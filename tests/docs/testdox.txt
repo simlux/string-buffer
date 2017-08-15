@@ -42,4 +42,6 @@ Simlux\String\Test\StringBuffer
  [x] Lazy loading string properties
  [x] Camel case
  [x] Camel snake case
+ [x] Substring
+ [x] Reverse
 

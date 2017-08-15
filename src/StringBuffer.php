@@ -307,8 +307,10 @@ class StringBuffer
     {
         if ($condition) {
             return $this->prepend($string);
-        } else if (!is_null($else)) {
-            return $this->prepend($else);
+        } else {
+            if (!is_null($else)) {
+                return $this->prepend($else);
+            }
         }
 
         return $this;
@@ -341,4 +343,37 @@ class StringBuffer
         return $this;
     }
 
+    /**
+     * @param int      $start
+     * @param int|null $length
+     *
+     * @return StringBuffer
+     */
+    public function substring(int $start, int $length = null): StringBuffer
+    {
+        if (is_null($length)) {
+            $this->string = substr($this->string, $start);
+        } else {
+            $this->string = substr($this->string, $start, $length);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param bool $utf8
+     *
+     * @return StringBuffer
+     */
+    public function reverse(bool $utf8 = false): StringBuffer
+    {
+        if ($utf8) {
+            preg_match_all('/./us', $this->string, $matches);
+            $this->string = join('', array_reverse($matches[0]));
+        } else {
+            $this->string = strrev($this->string);
+        }
+
+        return $this;
+    }
 }

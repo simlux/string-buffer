@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1502760767">
-  <project timestamp="1502760767">
+<coverage generated="1502820704">
+  <project timestamp="1502820704">
     <package name="Simlux\String\Exceptions">
       <file name="/home/simon/repositories/string-buffer/src/Exceptions/UnknownExtensionException.php">
         <class name="UnknownExtensionException" namespace="Simlux\String\Exceptions">
@@ -113,13 +113,13 @@
     <package name="Simlux\String">
       <file name="/home/simon/repositories/string-buffer/src/StringBuffer.php">
         <class name="StringBuffer" namespace="Simlux\String" fullPackage="Simlux" package="Simlux">
-          <metrics complexity="32" methods="17" coveredmethods="17" conditionals="0" coveredconditionals="0" statements="58" coveredstatements="58" elements="75" coveredelements="75"/>
+          <metrics complexity="36" methods="19" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="67" coveredstatements="67" elements="86" coveredelements="86"/>
         </class>
-        <line num="110" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="72"/>
-        <line num="112" type="stmt" count="72"/>
-        <line num="113" type="stmt" count="72"/>
-        <line num="120" type="method" name="create" visibility="public" complexity="1" crap="1" count="70"/>
-        <line num="122" type="stmt" count="70"/>
+        <line num="110" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="77"/>
+        <line num="112" type="stmt" count="77"/>
+        <line num="113" type="stmt" count="77"/>
+        <line num="120" type="method" name="create" visibility="public" complexity="1" crap="1" count="75"/>
+        <line num="122" type="stmt" count="75"/>
         <line num="132" type="method" name="getExtension" visibility="protected" complexity="5" crap="5" count="20"/>
         <line num="134" type="stmt" count="20"/>
         <line num="137" type="stmt" count="20"/>
@@ -157,8 +157,8 @@
         <line num="220" type="stmt" count="14"/>
         <line num="221" type="stmt" count="14"/>
         <line num="224" type="stmt" count="14"/>
-        <line num="230" type="method" name="toString" visibility="public" complexity="1" crap="1" count="66"/>
-        <line num="232" type="stmt" count="66"/>
+        <line num="230" type="method" name="toString" visibility="public" complexity="1" crap="1" count="71"/>
+        <line num="232" type="stmt" count="71"/>
         <line num="238" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="6"/>
         <line num="240" type="stmt" count="6"/>
         <line num="248" type="method" name="setString" visibility="public" complexity="1" crap="1" count="17"/>
@@ -179,20 +179,31 @@
         <line num="306" type="method" name="prependIf" visibility="public" complexity="3" crap="3" count="1"/>
         <line num="308" type="stmt" count="1"/>
         <line num="309" type="stmt" count="1"/>
-        <line num="310" type="stmt" count="1"/>
         <line num="311" type="stmt" count="1"/>
-        <line num="314" type="stmt" count="1"/>
-        <line num="322" type="method" name="camelCase" visibility="public" complexity="2" crap="2" count="4"/>
-        <line num="324" type="stmt" count="4"/>
-        <line num="325" type="stmt" count="4"/>
-        <line num="326" type="stmt" count="1"/>
-        <line num="329" type="stmt" count="4"/>
-        <line num="337" type="method" name="snakeCase" visibility="public" complexity="1" crap="1" count="4"/>
-        <line num="339" type="stmt" count="4"/>
+        <line num="312" type="stmt" count="1"/>
+        <line num="316" type="stmt" count="1"/>
+        <line num="324" type="method" name="camelCase" visibility="public" complexity="2" crap="2" count="4"/>
+        <line num="326" type="stmt" count="4"/>
+        <line num="327" type="stmt" count="4"/>
+        <line num="328" type="stmt" count="1"/>
+        <line num="331" type="stmt" count="4"/>
+        <line num="339" type="method" name="snakeCase" visibility="public" complexity="1" crap="1" count="4"/>
         <line num="341" type="stmt" count="4"/>
-        <metrics loc="343" ncloc="212" classes="1" methods="17" coveredmethods="17" conditionals="0" coveredconditionals="0" statements="58" coveredstatements="58" elements="75" coveredelements="75"/>
+        <line num="343" type="stmt" count="4"/>
+        <line num="352" type="method" name="substring" visibility="public" complexity="2" crap="2" count="4"/>
+        <line num="354" type="stmt" count="4"/>
+        <line num="355" type="stmt" count="1"/>
+        <line num="357" type="stmt" count="3"/>
+        <line num="360" type="stmt" count="4"/>
+        <line num="368" type="method" name="reverse" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="370" type="stmt" count="1"/>
+        <line num="371" type="stmt" count="1"/>
+        <line num="372" type="stmt" count="1"/>
+        <line num="374" type="stmt" count="1"/>
+        <line num="377" type="stmt" count="1"/>
+        <metrics loc="378" ncloc="236" classes="1" methods="19" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="67" coveredstatements="67" elements="86" coveredelements="86"/>
       </file>
     </package>
-    <metrics files="8" loc="634" ncloc="402" classes="8" methods="37" coveredmethods="37" conditionals="0" coveredconditionals="0" statements="101" coveredstatements="101" elements="138" coveredelements="138"/>
+    <metrics files="8" loc="669" ncloc="426" classes="8" methods="39" coveredmethods="39" conditionals="0" coveredconditionals="0" statements="110" coveredstatements="110" elements="149" coveredelements="149"/>
   </project>
 </coverage>
