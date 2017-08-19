@@ -44,7 +44,7 @@ class Manipulator extends AbstractExtension
      *
      * @return StringBuffer
      */
-    public function cutLeft(string $string, $caseSensitive = false): StringBuffer
+    public function cutLeft(string $string, bool $caseSensitive = false): StringBuffer
     {
         if ($this->string->beginsWith($string, $caseSensitive)) {
             $this->string->setString(substr($this->string->toString(), strlen($string)));
@@ -54,12 +54,12 @@ class Manipulator extends AbstractExtension
     }
 
     /**
-     * @param      $string
-     * @param bool $caseSensitive
+     * @param string $string
+     * @param bool   $caseSensitive
      *
      * @return StringBuffer
      */
-    public function cutRight($string, $caseSensitive = false): StringBuffer
+    public function cutRight(string $string, bool $caseSensitive = false): StringBuffer
     {
         if ($this->string->endsWith($string, $caseSensitive)) {
             $this->string->setString(substr($this->string->toString(), 0, strlen($string) * -1));

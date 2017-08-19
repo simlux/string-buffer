@@ -9,6 +9,7 @@ class Loader
 {
     const EXTENSION_CONDITIONS  = 'conditions';
     const EXTENSION_HASHES      = 'hashes';
+    const EXTENSION_LISTER      = 'lister';
     const EXTENSION_MANIPULATOR = 'manipulator';
     const EXTENSION_PROPERTIES  = 'properties';
     const EXTENSION_TRANSFORMER = 'transformer';
@@ -21,6 +22,7 @@ class Loader
         self::EXTENSION_CONDITIONS  => Conditions::class,
         self::EXTENSION_HASHES      => Hashes::class,
         self::EXTENSION_MANIPULATOR => Manipulator::class,
+        self::EXTENSION_LISTER      => Lister::class,
         self::EXTENSION_PROPERTIES  => Properties::class,
         self::EXTENSION_TRANSFORMER => Transformer::class,
         self::EXTENSION_URL         => Url::class,
@@ -50,7 +52,7 @@ class Loader
     {
         $this->string = $string;
         foreach ($this->classMap as $key => $class) {
-            $this->extensionMethods[$key] = get_class_methods($class);
+            $this->extensionMethods[ $key ] = get_class_methods($class);
         }
     }
 

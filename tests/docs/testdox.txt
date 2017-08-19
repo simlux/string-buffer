@@ -11,6 +11,10 @@ Simlux\String\Test\Extensions\Hashes
  [x] Md 5
  [x] Sha 1
 
+Simlux\String\Test\Extensions\Lister
+ [x] Split
+ [x] Split uppercase
+
 Simlux\String\Test\Extensions\Loader
  [x] That factory throws unknown extension exception
 
