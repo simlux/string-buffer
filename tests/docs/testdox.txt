@@ -35,6 +35,8 @@ Simlux\String\Test\Extensions\Transformer
 Simlux\String\Test\Extensions\Url
  [x] Url encode
  [x] Url decode
+ [x] Base 64 encode
+ [x] Base 64 decode
 
 Simlux\String\Test\StringBuffer
  [ ] That get extensions throws exception

@@ -21,4 +21,20 @@ class Url extends AbstractExtension
     {
         return $this->string->setString(urldecode($this->string->toString()));
     }
+
+    /**
+     * @return StringBuffer
+     */
+    public function base64Encode(): StringBuffer
+    {
+        return $this->string->setString(base64_encode($this->string->toString()));
+    }
+
+    /**
+     * @return StringBuffer
+     */
+    public function base64Decode(): StringBuffer
+    {
+        return $this->string->setString(base64_decode($this->string->toString()));
+    }
 }

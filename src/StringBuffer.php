@@ -45,6 +45,8 @@ use Simlux\String\Extensions\Loader;
  **** from Url
  * @method StringBuffer urlEncode()
  * @method StringBuffer urlDecode()
+ * @method StringBuffer base64Encode()
+ * @method StringBuffer base64Decode()
  */
 class StringBuffer
 {

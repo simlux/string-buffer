@@ -16,4 +16,14 @@ class UrlTest extends TestCase
     {
         $this->assertSame(urldecode('test'), StringBuffer::create('test')->urlDecode()->toString());
     }
+
+    public function testBase64Encode()
+    {
+        $this->assertSame(base64_encode('test'), StringBuffer::create('test')->base64Encode()->toString());
+    }
+
+    public function testBase64Decode()
+    {
+        $this->assertSame(base64_decode('test'), StringBuffer::create('test')->base64Decode()->toString());
+    }
 }
