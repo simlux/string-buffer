@@ -7,6 +7,7 @@ use Simlux\String\Exceptions\UnknownExtensionException;
 use Simlux\String\Exceptions\UnknownMethodException;
 use Simlux\String\Extensions\AbstractExtension;
 use Simlux\String\Extensions\Conditions;
+use Simlux\String\Extensions\Hashes;
 use Simlux\String\Extensions\Manipulator;
 use Simlux\String\Extensions\Properties;
 use Simlux\String\Extensions\Transformer;
@@ -42,6 +43,10 @@ use Simlux\String\Extensions\Transformer;
  * @method StringBuffer cutRight(string $string, $caseSensitive = false)
  * @method StringBuffer replace($search, $replace): StringBuffer
  * @method StringBuffer remove($string)
+ *
+ **** from Hashes
+ * @method StringBuffer md5()
+ * @method StringBuffer sha1()
  */
 class StringBuffer
 {
@@ -69,6 +74,11 @@ class StringBuffer
      * @var Manipulator
      */
     private $manipulator;
+
+    /**
+     * @var Hashes
+     */
+    private $hashes;
 
     /**
      * @var array
@@ -99,6 +109,10 @@ class StringBuffer
             'cutRight',
             'replace',
             'remove',
+        ],
+        'hashes' => [
+            'md5',
+            'sha1',
         ],
     ];
 
@@ -148,6 +162,10 @@ class StringBuffer
 
             case 'manipulator':
                 $instance = $this->manipulator();
+                break;
+
+            case 'hashes':
+                $instance = $this->hashes();
                 break;
 
             default:
@@ -222,6 +240,18 @@ class StringBuffer
         }
 
         return $this->manipulator;
+    }
+
+    /**
+     * @return Hashes
+     */
+    public function hashes(): Hashes
+    {
+        if (is_null($this->hashes)) {
+            $this->hashes = new Hashes($this);
+        }
+
+        return $this->hashes;
     }
 
     /**

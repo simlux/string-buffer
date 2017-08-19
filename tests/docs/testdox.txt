@@ -7,6 +7,10 @@ Simlux\String\Test\Extensions\Conditions
  [x] Ends with one of
  [x] Equals
 
+Simlux\String\Test\Extensions\Hashes
+ [x] Md 5
+ [x] Sha 1
+
 Simlux\String\Test\Extensions\Manipulator
  [x] Trim
  [x] Left trim
