@@ -19,13 +19,21 @@ $buffer->prepend('foo');
 echo $buffer->toString(); // footestbar
 
 // with factory method
-echo StringBuffer::create('Test')                   // Test
-    ->append('Bar')                                 // TestBar
-    ->prepend('Foo')                                // FooTestBar
-    ->appendIf(true, 'AppendIf', 'AppendElse')      // FooTestBarAppendIf
-    ->appendIf(false, 'AppendIf', 'AppendElse')     // FooTestBarAppendIfAppendElse
-    ->prependIf(true, 'PrependIf', 'PrependElse')   // PrependIfFooTestBarAppendIfAppendElse
-    ->prependIf(false, 'PrependIf', 'PrependElse'); // PrependElsePrependIfFooTestBarAppendIfAppendElse
+StringBuffer::create('Test') // Test
+    ->append('Bar')          // TestBar 
+    ->prepend('Foo');        // FooTestBar
+    
+StringBuffer::create('Test')                    // Test 
+    ->appendIf(true, 'AppendIf', 'AppendElse'); // TestAppendIf
+    
+StringBuffer::create('Test')                     // Test
+    ->appendIf(false, 'AppendIf', 'AppendElse'); // TestAppendElse
+
+StringBuffer::create('Test')                       // Test
+    ->prependIf(true, 'PrependIf', 'PrependElse'); // PrependIfTest
+
+StringBuffer::create('Test')                        // Test
+    ->prependIf(false, 'PrependIf', 'PrependElse'); // PrependElseTest
 ```
 
 ## SonarQube
