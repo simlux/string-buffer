@@ -11,6 +11,9 @@ Simlux\String\Test\Extensions\Hashes
  [x] Md 5
  [x] Sha 1
 
+Simlux\String\Test\Extensions\Loader
+ [x] That factory throws unknown extension exception
+
 Simlux\String\Test\Extensions\Manipulator
  [x] Trim
  [x] Left trim
@@ -29,8 +32,12 @@ Simlux\String\Test\Extensions\Transformer
  [x] To float
  [x] To integer
 
+Simlux\String\Test\Extensions\Url
+ [x] Url encode
+ [x] Url decode
+
 Simlux\String\Test\StringBuffer
- [x] That get extensions throws exception
+ [ ] That get extensions throws exception
  [x] Create factory
  [x] To string
  [x] Set string
@@ -38,9 +45,6 @@ Simlux\String\Test\StringBuffer
  [x] Append if
  [x] Prepend
  [x] Prepend if
- [x] Conditions
- [x] Properties
- [x] Transformer
  [x] That unknown method exception is thrown
  [x] Lazy loading string conditions
  [x] Lazy loading string properties

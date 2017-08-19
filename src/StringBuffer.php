@@ -3,14 +3,8 @@
 namespace Simlux\String;
 
 use Illuminate\Support\Str;
-use Simlux\String\Exceptions\UnknownExtensionException;
 use Simlux\String\Exceptions\UnknownMethodException;
-use Simlux\String\Extensions\AbstractExtension;
-use Simlux\String\Extensions\Conditions;
-use Simlux\String\Extensions\Hashes;
-use Simlux\String\Extensions\Manipulator;
-use Simlux\String\Extensions\Properties;
-use Simlux\String\Extensions\Transformer;
+use Simlux\String\Extensions\Loader;
 
 /**
  * Class StringBuffer
@@ -47,6 +41,10 @@ use Simlux\String\Extensions\Transformer;
  **** from Hashes
  * @method StringBuffer md5()
  * @method StringBuffer sha1()
+ *
+ **** from Url
+ * @method StringBuffer urlEncode()
+ * @method StringBuffer urlDecode()
  */
 class StringBuffer
 {
@@ -56,65 +54,9 @@ class StringBuffer
     private $string;
 
     /**
-     * @var Conditions
+     * @var Loader
      */
-    private $conditions;
-
-    /**
-     * @var Properties
-     */
-    private $properties;
-
-    /**
-     * @var Transformer
-     */
-    private $transformer;
-
-    /**
-     * @var Manipulator
-     */
-    private $manipulator;
-
-    /**
-     * @var Hashes
-     */
-    private $hashes;
-
-    /**
-     * @var array
-     */
-    private $extensions = [
-        'conditions'  => [
-            'contains',
-            'containsOneOf',
-            'beginsWith',
-            'beginsWithOneOf',
-            'endsWith',
-            'endsWithOneOf',
-        ],
-        'properties'  => [
-            'length',
-        ],
-        'transformer' => [
-            'toLower',
-            'toUpper',
-            'toFloat',
-            'toInteger',
-        ],
-        'manipulator' => [
-            'trim',
-            'trimLeft',
-            'trimRight',
-            'cutLeft',
-            'cutRight',
-            'replace',
-            'remove',
-        ],
-        'hashes' => [
-            'md5',
-            'sha1',
-        ],
-    ];
+    private $loader;
 
     /**
      * StringBuffer constructor.
@@ -124,6 +66,7 @@ class StringBuffer
     public function __construct(string $string)
     {
         $this->string = $string;
+        $this->loader = new Loader($this);
     }
 
     /**
@@ -137,46 +80,6 @@ class StringBuffer
     }
 
     /**
-     * @param string $extension
-     *
-     * @return AbstractExtension
-     *
-     * @throws UnknownExtensionException
-     */
-    protected function getExtension(string $extension): AbstractExtension
-    {
-        $instance = null;
-        switch ($extension) {
-
-            case 'conditions':
-                $instance = $this->conditions();
-                break;
-
-            case 'properties':
-                $instance = $this->properties();
-                break;
-
-            case 'transformer':
-                $instance = $this->transformer();
-                break;
-
-            case 'manipulator':
-                $instance = $this->manipulator();
-                break;
-
-            case 'hashes':
-                $instance = $this->hashes();
-                break;
-
-            default:
-                throw new UnknownExtensionException($extension);
-
-        }
-
-        return $instance;
-    }
-
-    /**
      * @param string $name
      * @param array  $arguments
      *
@@ -185,73 +88,13 @@ class StringBuffer
      */
     public function __call(string $name, array $arguments)
     {
-        foreach ($this->extensions as $key => $methods) {
-            if (in_array($name, $methods)) {
-                return call_user_func_array([$this->getExtension($key), $name], $arguments);
+        foreach ($this->loader->getExtensions() as $extension) {
+            if ($this->loader->extensionHasMethod($extension, $name)) {
+                return call_user_func_array([$this->loader->factory($extension), $name], $arguments);
             }
         }
 
         throw new UnknownMethodException($name);
-    }
-
-    /**
-     * @return Conditions
-     */
-    public function conditions(): Conditions
-    {
-        if (is_null($this->conditions)) {
-            $this->conditions = new Conditions($this);
-        }
-
-        return $this->conditions;
-    }
-
-    /**
-     * @return Properties
-     */
-    public function properties(): Properties
-    {
-        if (is_null($this->properties)) {
-            $this->properties = new Properties($this);
-        }
-
-        return $this->properties;
-    }
-
-    /**
-     * @return Transformer
-     */
-    public function transformer(): Transformer
-    {
-        if (is_null($this->transformer)) {
-            $this->transformer = new Transformer($this);
-        }
-
-        return $this->transformer;
-    }
-
-    /**
-     * @return Manipulator
-     */
-    public function manipulator(): Manipulator
-    {
-        if (is_null($this->manipulator)) {
-            $this->manipulator = new Manipulator($this);
-        }
-
-        return $this->manipulator;
-    }
-
-    /**
-     * @return Hashes
-     */
-    public function hashes(): Hashes
-    {
-        if (is_null($this->hashes)) {
-            $this->hashes = new Hashes($this);
-        }
-
-        return $this->hashes;
     }
 
     /**
