@@ -25,15 +25,19 @@ StringBuffer::create('Test') // Test
     
 StringBuffer::create('Test')                    // Test 
     ->appendIf(true, 'AppendIf', 'AppendElse'); // TestAppendIf
-    
 StringBuffer::create('Test')                     // Test
     ->appendIf(false, 'AppendIf', 'AppendElse'); // TestAppendElse
 
 StringBuffer::create('Test')                       // Test
     ->prependIf(true, 'PrependIf', 'PrependElse'); // PrependIfTest
-
 StringBuffer::create('Test')                        // Test
     ->prependIf(false, 'PrependIf', 'PrependElse'); // PrependElseTest
+    
+StringBuffer::create('Test') // Test
+    ->replace('es', 'ES');   // TESt
+    
+StringBuffer::create('Test') // Test
+    ->remove('es');          // Tt
 ```
 
 ## SonarQube
