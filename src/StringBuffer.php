@@ -255,4 +255,24 @@ class StringBuffer
 
         return $this;
     }
+
+    /**
+     * @return StringBuffer
+     */
+    public function ucFirst(): StringBuffer
+    {
+        $this->string = ucfirst($this->string);
+
+        return $this;
+    }
+
+    /**
+     * @return StringBuffer
+     */
+    public function ucWords(): StringBuffer
+    {
+        $this->string = ucwords($this->string);
+
+        return $this;
+    }
 }
