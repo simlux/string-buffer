@@ -18,12 +18,12 @@ class StringBufferTest extends TestCase
         $this->expectExceptionMessage('foobar');
 
 
-        $buffer = new StringBuffer('test');
-        $loader = new Loader($buffer);
+        $buffer         = new StringBuffer('test');
+        $loader         = new Loader($buffer);
         $loaderRef      = new \ReflectionClass($loader);
         $extensionsProp = $loaderRef->getProperty('extensionMethods');
         $extensionsProp->setAccessible(true);
-        $extensions = $extensionsProp->getValue($loaderRef);
+        $extensions           = $extensionsProp->getValue($loaderRef);
         $extensions['foobar'] = ['foobar'];
         $extensionsProp->setValue($loader, $extensions);
 
@@ -224,4 +224,45 @@ class StringBufferTest extends TestCase
         $this->assertSame('raböof', StringBuffer::create('foöbar')->reverse(true)->toString());
     }
 
+    public function dataProviderForTestUcFirst(): array
+    {
+        return [
+            0 => [
+                'string'   => 'foobar',
+                'expected' => 'Foobar',
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderForTestUcFirst
+     *
+     * @param string $string
+     * @param string $expected
+     */
+    public function testUcFirst(string $string, string $expected)
+    {
+        $this->assertSame($expected, StringBuffer::create($string)->ucFirst()->toString());
+    }
+
+    public function dataProviderForTestUcWords()
+    {
+        return [
+            0 => [
+                'string'   => 'foo bar',
+                'expected' => 'Foo Bar',
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderForTestUcWords
+     *
+     * @param string $string
+     * @param string $expected
+     */
+    public function testUcWords(string $string, string $expected)
+    {
+        $this->assertSame($expected, StringBuffer::create($string)->ucWords()->toString());
+    }
 }

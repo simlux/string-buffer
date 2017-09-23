@@ -58,4 +58,6 @@ Simlux\String\Test\StringBuffer
  [x] Camel snake case
  [x] Substring
  [x] Reverse
+ [x] Uc first
+ [x] Uc words
 
