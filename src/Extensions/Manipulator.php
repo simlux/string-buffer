@@ -71,21 +71,27 @@ class Manipulator extends AbstractExtension
     /**
      * @param string|array $search
      * @param string|array $replace
+     * @param bool         $caseSensitive
      *
      * @return StringBuffer
      */
-    public function replace($search, $replace): StringBuffer
+    public function replace($search, $replace, bool $caseSensitive = true): StringBuffer
     {
-        return $this->string->setString(str_replace($search, $replace, $this->string));
+        if ($caseSensitive) {
+            return $this->string->setString(str_replace($search, $replace, $this->string));
+        } else {
+            return $this->string->setString(str_ireplace($search, $replace, $this->string));
+        }
     }
 
     /**
      * @param string|array $string
+     * @param bool         $caseSensitive
      *
      * @return StringBuffer
      */
-    public function remove($string): StringBuffer
+    public function remove($string, bool $caseSensitive = true): StringBuffer
     {
-        return $this->replace($string, '');
+        return $this->replace($string, '', $caseSensitive);
     }
 }

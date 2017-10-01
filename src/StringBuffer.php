@@ -2,7 +2,6 @@
 
 namespace Simlux\String;
 
-use Illuminate\Support\Str;
 use Simlux\String\Exceptions\UnknownMethodException;
 use Simlux\String\Extensions\Loader;
 
@@ -19,6 +18,13 @@ use Simlux\String\Extensions\Loader;
  * @method bool endsWith($string, bool $caseSensitive = true)
  * @method bool endsWithOneOf(array $strings, bool $caseSensitive = true)
  * @method bool equals(string $string, bool $caseSensitive = true)
+ *
+ **** from Convention
+ * @method StringBuffer camelCase(bool $ucFirst = false)
+ * @method StringBuffer snakeCase(string $delimiter = '_')
+ * @method StringBuffer ucFirst()
+ * @method StringBuffer lcFirst()
+ * @method StringBuffer ucWords()
  *
  **** from Properties
  * @method int length()
@@ -196,33 +202,6 @@ class StringBuffer
     }
 
     /**
-     * @param bool $ucFirst
-     *
-     * @return StringBuffer
-     */
-    public function camelCase(bool $ucFirst = false): StringBuffer
-    {
-        $this->string = Str::camel($this->string);
-        if ($ucFirst) {
-            $this->string = ucfirst($this->string);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param string $delimiter
-     *
-     * @return StringBuffer
-     */
-    public function snakeCase(string $delimiter = '_'): StringBuffer
-    {
-        $this->string = Str::snake($this->string, $delimiter);
-
-        return $this;
-    }
-
-    /**
      * @param int      $start
      * @param int|null $length
      *
@@ -252,26 +231,6 @@ class StringBuffer
         } else {
             $this->string = strrev($this->string);
         }
-
-        return $this;
-    }
-
-    /**
-     * @return StringBuffer
-     */
-    public function ucFirst(): StringBuffer
-    {
-        $this->string = ucfirst($this->string);
-
-        return $this;
-    }
-
-    /**
-     * @return StringBuffer
-     */
-    public function ucWords(): StringBuffer
-    {
-        $this->string = ucwords($this->string);
 
         return $this;
     }

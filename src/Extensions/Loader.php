@@ -7,6 +7,7 @@ use Simlux\String\StringBuffer;
 
 class Loader
 {
+    const EXTENSION_CONVENTION  = 'convention';
     const EXTENSION_CONDITIONS  = 'conditions';
     const EXTENSION_HASHES      = 'hashes';
     const EXTENSION_LISTER      = 'lister';
@@ -19,6 +20,7 @@ class Loader
      * @var array
      */
     private $classMap = [
+        self::EXTENSION_CONVENTION  => Convention::class,
         self::EXTENSION_CONDITIONS  => Conditions::class,
         self::EXTENSION_HASHES      => Hashes::class,
         self::EXTENSION_MANIPULATOR => Manipulator::class,
@@ -62,7 +64,8 @@ class Loader
      * @return AbstractExtension
      * @throws UnknownExtensionException
      */
-    public function factory(string $extension): AbstractExtension
+    public function factory(string $extension)
+    : AbstractExtension
     {
         if (!in_array($extension, array_keys($this->classMap))) {
             throw new UnknownExtensionException($extension);
@@ -81,7 +84,8 @@ class Loader
      *
      * @return bool
      */
-    public function extensionHasMethod(string $extension, string $method): bool
+    public function extensionHasMethod(string $extension, string $method)
+    : bool
     {
         return in_array($method, $this->extensionMethods[ $extension ]);
     }
@@ -89,7 +93,8 @@ class Loader
     /**
      * @return array
      */
-    public function getExtensions(): array
+    public function getExtensions()
+    : array
     {
         return array_keys($this->classMap);
     }
