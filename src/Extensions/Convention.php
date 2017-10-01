@@ -14,9 +14,9 @@ class Convention extends AbstractExtension
      */
     public function camelCase(bool $ucFirst = false): StringBuffer
     {
-        $this->string->setString(Str::camel($this->string));
+        $this->string->setString(Str::camel($this->string->toString()));
         if ($ucFirst) {
-            $this->string->setString(ucfirst($this->string));
+            $this->string->ucFirst();
         }
 
         return $this->string;
@@ -29,7 +29,7 @@ class Convention extends AbstractExtension
      */
     public function snakeCase(string $delimiter = '_'): StringBuffer
     {
-        $this->string->setString(Str::snake($this->string, $delimiter));
+        $this->string->setString(Str::snake($this->string->toString(), $delimiter));
 
         return $this->string;
     }
@@ -39,7 +39,7 @@ class Convention extends AbstractExtension
      */
     public function ucFirst(): StringBuffer
     {
-        $this->string->setString(ucfirst($this->string));
+        $this->string->setString(ucfirst($this->string->toString()));
 
         return $this->string;
     }
@@ -49,7 +49,7 @@ class Convention extends AbstractExtension
      */
     public function lcFirst(): StringBuffer
     {
-        $this->string->setString(lcfirst($this->string));
+        $this->string->setString(lcfirst($this->string->toString()));
 
         return $this->string;
     }
@@ -59,7 +59,7 @@ class Convention extends AbstractExtension
      */
     public function ucWords(): StringBuffer
     {
-        $this->string->setString(ucwords($this->string));
+        $this->string->setString(ucwords($this->string->toString()));
 
         return $this->string;
     }
