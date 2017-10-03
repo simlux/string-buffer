@@ -12,6 +12,7 @@ class Loader
     const EXTENSION_HASHES      = 'hashes';
     const EXTENSION_LISTER      = 'lister';
     const EXTENSION_MANIPULATOR = 'manipulator';
+    const EXTENSION_PARSER      = 'parser';
     const EXTENSION_PROPERTIES  = 'properties';
     const EXTENSION_TRANSFORMER = 'transformer';
     const EXTENSION_URL         = 'url';
@@ -25,6 +26,7 @@ class Loader
         self::EXTENSION_HASHES      => Hashes::class,
         self::EXTENSION_MANIPULATOR => Manipulator::class,
         self::EXTENSION_LISTER      => Lister::class,
+        self::EXTENSION_PARSER      => Parser::class,
         self::EXTENSION_PROPERTIES  => Properties::class,
         self::EXTENSION_TRANSFORMER => Transformer::class,
         self::EXTENSION_URL         => Url::class,

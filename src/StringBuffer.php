@@ -26,6 +26,9 @@ use Simlux\String\Extensions\Loader;
  * @method StringBuffer lcFirst()
  * @method StringBuffer ucWords()
  *
+ **** from Parser
+ * @method array parseCSV(string $string, string $delimiter = ',', string $enclosure = '"', string $escape = '\\')
+ *
  **** from Properties
  * @method int length()
  *
