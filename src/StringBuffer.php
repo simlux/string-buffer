@@ -18,6 +18,7 @@ use Simlux\String\Extensions\Loader;
  * @method bool endsWith($string, bool $caseSensitive = true)
  * @method bool endsWithOneOf(array $strings, bool $caseSensitive = true)
  * @method bool equals(string $string, bool $caseSensitive = true)
+ * @method bool isOneOf(array $strings, bool $caseSensitive = true)
  *
  **** from Convention
  * @method StringBuffer camelCase(bool $ucFirst = false)
