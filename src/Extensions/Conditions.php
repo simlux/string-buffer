@@ -115,4 +115,21 @@ class Conditions extends AbstractExtension
 
         return strtolower($this->string->toString()) === strtolower($string);
     }
+
+    /**
+     * @param array $strings
+     * @param bool  $caseSensitive
+     *
+     * @return bool
+     */
+    public function isOneOf(array $strings, bool $caseSensitive = true): bool
+    {
+        foreach ($strings as $string) {
+            if ($this->equals($string, $caseSensitive)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
