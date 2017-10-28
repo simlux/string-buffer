@@ -49,8 +49,8 @@ use Simlux\String\Extensions\Loader;
  * @method StringBuffer trimRight(string $charList = " \t\n\r\0\x0B")
  * @method StringBuffer cutLeft(string $string, bool $caseSensitive = false)
  * @method StringBuffer cutRight(string $string, bool $caseSensitive = false)
- * @method StringBuffer replace(string|array $search, string|array $replace): StringBuffer
- * @method StringBuffer remove(string|array $string)
+ * @method StringBuffer replace(string|array $search, string|array $replace, bool $caseSensitive = true): StringBuffer
+ * @method StringBuffer remove(string|array $string, bool $caseSensitive = true)
  *
  **** from Hashes
  * @method StringBuffer md5()
