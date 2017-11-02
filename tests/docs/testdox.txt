@@ -27,6 +27,10 @@ Simlux\String\Test\Extensions\Manipulator
  [x] Replace
  [x] Remove
 
+Simlux\String\Test\Extensions\Process
+ [x] When then
+ [x] When then else
+
 Simlux\String\Test\Extensions\Properties
  [x] Length
 

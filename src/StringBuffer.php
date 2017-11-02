@@ -56,6 +56,9 @@ use Simlux\String\Extensions\Loader;
  * @method StringBuffer md5()
  * @method StringBuffer sha1()
  *
+ **** from Process
+ * @method StringBuffer when(bool $condition, callable $then, callable $else = null)
+ *
  **** from Url
  * @method StringBuffer urlEncode()
  * @method StringBuffer urlDecode()
